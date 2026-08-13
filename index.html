@@ -45,7 +45,8 @@ a{text-decoration:none;color:inherit}
 .cop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:cop 30s infinite}
 @keyframes cop{0%{opacity:0}3%{opacity:.55}16%{opacity:.55}20%{opacity:0}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.cop{animation:none;opacity:0}.cop:first-of-type{opacity:.55}}
-.reel-item{position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--scuro)}
+.reel-item{position:relative;aspect-ratio:9/16;max-height:62svh;overflow:hidden;background:var(--scuro);border-radius:14px}
+.reel-item video{width:100%;height:100%;object-fit:cover}
 .reel-item video,.reel-item img{width:100%;height:100%;object-fit:cover}
 .reel-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,18,9,.75) 0%,transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
 .reel-lbl{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:#fff;margin-bottom:3px}
@@ -67,6 +68,11 @@ a{text-decoration:none;color:inherit}
 .loc-img{width:100%;height:280px;object-fit:cover;display:block}
 .rev-bg{background:var(--caldo);padding:72px 20px}
 .rev-c{background:#fff;border-radius:12px;padding:20px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.rev-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px;margin:0 -20px;padding-left:20px;padding-right:20px}
+.rev-strip::-webkit-scrollbar{display:none}
+.rev-strip .rev-c{flex:0 0 80%;max-width:340px;scroll-snap-align:start;margin-bottom:0}
+@media(min-width:760px){.rev-strip .rev-c{flex-basis:45%}}
+.rev-scorri{font-size:12px;color:var(--grigio);margin-top:6px}
 .rev-t{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;line-height:1.6;margin-bottom:10px}
 .stars{color:var(--acc);letter-spacing:2px;font-size:13px;margin-bottom:6px}
 .map-s{background:var(--scuro);padding:72px 20px}
@@ -130,17 +136,20 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
   </div>
   <a class="nav-cta" href="https://app.ristoflow-ai.com/#/booking/social">Prenota un tavolo</a>
 </nav>
-<div style="position:relative;height:100svh;min-height:580px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:80px;text-align:center;overflow:hidden;">
+<div style="position:relative;min-height:82svh;display:flex;align-items:flex-end;overflow:hidden;">
   <div style="position:absolute;inset:0;background:var(--scuro);">
     <img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1wsOKEtB8zZ0qXSNMVRnbQkicEEc7lDiF.jpg" class="cop" style="animation-delay:0s" alt=""><img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1ShtHUSf1WXut2aD3w0-3qrLacjZuTexC.jpg" class="cop" style="animation-delay:5s" alt=""><img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1yXSidNVw1kKY28I8p6E2hFofFHBsC7Ba.jpg" class="cop" style="animation-delay:10s" alt=""><img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1TQFUy8Xd1HwDKa22tbnc-Fa6lpelgeK2.jpg" class="cop" style="animation-delay:15s" alt=""><img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1jWg8oX5EQEBom7RdEIjMvm3tlpLQn_be.jpg" class="cop" style="animation-delay:20s" alt=""><img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1RS8yexCpXuHdZDQ-wlC8OtTku6tzMuKj.jpg" class="cop" style="animation-delay:25s" alt="">
   </div>
   <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.2) 60%,transparent 100%);"></div>
-  <div style="position:relative;z-index:2;padding:0 20px;">
-    <div class="eyebrow">Orte · A1 · Parcheggio gratuito</div>
-    <h1 class="h2" style="color:#fff;font-size:clamp(36px,8vw,72px);margin-bottom:16px;text-shadow:0 2px 12px rgba(0,0,0,.5);">Tradizione e Sapori Autentici</h1>
-    <p style="font-size:14px;color:rgba(255,255,255,.85);margin-bottom:28px;max-width:440px;margin-left:auto;margin-right:auto;text-shadow:0 1px 6px rgba(0,0,0,.5);">Un viaggio culinario nel cuore di Orte.</p>
-    <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="font-size:16px;padding:16px 36px;">🗓 Prenota un tavolo</a>
-    <a class="btn-ghost" href="tel:0761402673">📞 Chiama</a>
+  <div style="position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:0 20px 34px;text-align:left;">
+    <div class="eyebrow">Orte · uscita A1</div>
+    <h1 class="h2" style="color:#fff;font-size:clamp(31px,8vw,58px);line-height:1.06;margin:8px 0 10px;text-shadow:0 2px 12px rgba(0,0,0,.5);">Tradizione e Sapori Autentici</h1>
+    <p style="font-size:16px;color:rgba(255,255,255,.9);margin-bottom:20px;max-width:34ch;text-shadow:0 1px 6px rgba(0,0,0,.5);">Un viaggio culinario nel cuore di Orte.</p>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="font-size:15px;padding:14px 26px;">🗓 Prenota un tavolo</a>
+      <a class="btn-ghost" href="tel:0761402673">📞 Chiama</a>
+    </div>
+    <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:18px;"><span style="border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.88);padding:5px 11px;border-radius:999px;font-size:12.5px;">★ 5,0 su 5 recensioni</span><span style="border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.88);padding:5px 11px;border-radius:999px;font-size:12.5px;">Ingredienti Freschi e Locali</span></div>
   </div>
 </div>
 <div class="cta-bar">
@@ -159,7 +168,7 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
 </section>
 
 <div class="reel-grid" style="max-width:100%;margin:0 auto;">
-  <div class="reel-item"><video src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1odcFWb3g0pRM9hpu8fJYrKE-Z_yY9zdD.mp4" autoplay muted loop playsinline></video><div class="reel-ov"><div class="reel-lbl">I primi di terra</div><div class="reel-sub">Tradizione · Territorio</div></div></div>
+  <div class="reel-item"><video src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1rEqWjcC9Yb3rqeF_1q4MUbTqr_kKwxpR.mp4" autoplay muted loop playsinline></video><div class="reel-ov"><div class="reel-lbl">I primi di terra</div><div class="reel-sub">Tradizione · Territorio</div></div></div>
   <div class="reel-item"><video src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1ydnSCFzxL6vRZ8gupQUV4qCh-H3EIASa.mp4" autoplay muted loop playsinline></video><div class="reel-ov"><div class="reel-lbl">Il nostro mare</div><div class="reel-sub">Scelto ogni mattina</div></div></div>
 </div>
 
@@ -183,11 +192,13 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
   </section>
 </div>
 
+
 <div class="rev-bg">
   <div style="max-width:700px;margin:0 auto;">
     <div class="eyebrow">Dicono di noi</div>
     <h2 class="h2" style="margin-bottom:24px;">L'opinione<br><em>dei nostri ospiti</em></h2>
-    <div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Il ristorante eccellente, offre piatti di carne e di pesce, gustosi e abbondanti, a prezzi onesti. Posizione molto comoda, a un minuto dall'uscita dell'autostrada."</div><div style="font-size:12px;color:var(--grigio)"><strong>Manuela M.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Da moltissimi anni fermo sempre in questo ristorante, una garanzia. Anche con la nuova gestione. Hanno un menu divertente ed economico."</div><div style="font-size:12px;color:var(--grigio)"><strong>Tiziano T.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Ci siamo stati una sera, eravamo alloggiati nell'albergo, abbiamo mangiato bene, servizio impeccabile, prezzo corretto. Bravi."</div><div style="font-size:12px;color:var(--grigio)"><strong>Renato D.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Sempre delizioso, ottimo rapporto qualita-prezzo. Ottimo servizio. Ampio parcheggio."</div><div style="font-size:12px;color:var(--grigio)"><strong>Anna P.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Menu pranzo a 20 euro con antipasto, primo, secondo, acqua e caffe, all'entrata dell'autostrada, con ampio parcheggio interno. Tutto buono e in porzioni abbondanti. Personale gentilissimo."</div><div style="font-size:12px;color:var(--grigio)"><strong>Antonino L.</strong></div></div>
+    <div class="rev-strip"><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Il ristorante eccellente, offre piatti di carne e di pesce, gustosi e abbondanti, a prezzi onesti. Posizione molto comoda, a un minuto dall'uscita dell'autostrada."</div><div style="font-size:12px;color:var(--grigio)"><strong>Manuela M.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Da moltissimi anni fermo sempre in questo ristorante, una garanzia. Anche con la nuova gestione. Hanno un menu divertente ed economico."</div><div style="font-size:12px;color:var(--grigio)"><strong>Tiziano T.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Ci siamo stati una sera, eravamo alloggiati nell'albergo, abbiamo mangiato bene, servizio impeccabile, prezzo corretto. Bravi."</div><div style="font-size:12px;color:var(--grigio)"><strong>Renato D.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Sempre delizioso, ottimo rapporto qualita-prezzo. Ottimo servizio. Ampio parcheggio."</div><div style="font-size:12px;color:var(--grigio)"><strong>Anna P.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Menu pranzo a 20 euro con antipasto, primo, secondo, acqua e caffe, all'entrata dell'autostrada, con ampio parcheggio interno. Tutto buono e in porzioni abbondanti. Personale gentilissimo."</div><div style="font-size:12px;color:var(--grigio)"><strong>Antonino L.</strong></div></div></div>
+    <div class="rev-scorri">Scorri per leggerne altre &rarr;</div>
     <div style="text-align:center;margin-top:20px;"><a class="btn" href="https://app.ristoflow-ai.com/#/booking/social">🗓 Prenota un tavolo</a></div>
   </div>
 </div>
