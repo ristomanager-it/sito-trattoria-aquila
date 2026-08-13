@@ -45,7 +45,8 @@ a{text-decoration:none;color:inherit}
 .cop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:cop 30s infinite}
 @keyframes cop{0%{opacity:0}3%{opacity:.55}16%{opacity:.55}20%{opacity:0}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.cop{animation:none;opacity:0}.cop:first-of-type{opacity:.55}}
-.reel-item{position:relative;aspect-ratio:9/16;overflow:hidden;background:var(--scuro)}
+.reel-item{position:relative;aspect-ratio:9/16;max-height:62svh;overflow:hidden;background:var(--scuro);border-radius:14px}
+.reel-item video{width:100%;height:100%;object-fit:cover}
 .reel-item video,.reel-item img{width:100%;height:100%;object-fit:cover}
 .reel-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,18,9,.75) 0%,transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
 .reel-lbl{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:#fff;margin-bottom:3px}
@@ -67,6 +68,11 @@ a{text-decoration:none;color:inherit}
 .loc-img{width:100%;height:280px;object-fit:cover;display:block}
 .rev-bg{background:var(--caldo);padding:72px 20px}
 .rev-c{background:#fff;border-radius:12px;padding:20px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.rev-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px;margin:0 -20px;padding-left:20px;padding-right:20px}
+.rev-strip::-webkit-scrollbar{display:none}
+.rev-strip .rev-c{flex:0 0 80%;max-width:340px;scroll-snap-align:start;margin-bottom:0}
+@media(min-width:760px){.rev-strip .rev-c{flex-basis:45%}}
+.rev-scorri{font-size:12px;color:var(--grigio);margin-top:6px}
 .rev-t{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;line-height:1.6;margin-bottom:10px}
 .stars{color:var(--acc);letter-spacing:2px;font-size:13px;margin-bottom:6px}
 .map-s{background:var(--scuro);padding:72px 20px}
@@ -169,12 +175,12 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
       <div class="mi-p">€ 10.00</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">salmone stracciatella e miele</div></div>
-      <div class="mi-p">€ 12.00</div>
-    </div>
-    <div class="mi">
       <div><div class="mi-n">Cubo di tonno al pane verde e mentuccia con zucchine marinate e mayonese di polpo</div></div>
       <div class="mi-p">€ 15.00</div>
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">salmone stracciatella e miele</div></div>
+      <div class="mi-p">€ 12.00</div>
     </div>
   </div>
   <div class="menu-cat" data-cat="102664ab-6943-4c77-99dc-ce8d63c9383a" style="display:none">
@@ -186,6 +192,10 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
     <div class="mi">
       <div><div class="mi-n">Bucatini freschi trafilati al bronzo all'Amatriciana</div><div class="mi-d">Ricetta nata tra i monti di Amatrice, con guanciale croccante, pomodoro vivo e pecorino deciso. Un classico laziale che sa di casa.</div></div>
       <div class="mi-p">€ 12.00</div>
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Tagliolini al tartufo estivo</div></div>
+      <div class="mi-p">€ 16.00</div>
     </div>
     <div class="mi">
       <div><div class="mi-n">Spaghettoni alla carbonara</div><div class="mi-d">Spaghettoni freschi trafilati al bronzo, mantecati con uovo e Pecorino Romano DOP, guanciale croccante e pepe macinato al momento.</div></div>
@@ -243,8 +253,16 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
       <div class="mi-p">€ 10.50</div>
     </div>
     <div class="mi">
+      <div><div class="mi-n">Filetto di vitello alla griglia</div></div>
+      <div class="mi-p">€ 20.00</div>
+    </div>
+    <div class="mi">
       <div><div class="mi-n">Straccetti di vitellone, rucola pomodorini e scaglie di reggiano</div><div class="mi-d">Straccetti di vitellone scottati al salto, pomodorini dolci e rucola fresca, chiusura in scaglie di Parmigiano Reggiano DOP e filo d’olio buono.</div></div>
       <div class="mi-p">€ 13.50</div>
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Filetto di vitello al tartufo estivo</div></div>
+      <div class="mi-p">€ 24.00</div>
     </div>
     <div class="mi">
       <div><div class="mi-n">Frittura mista calamari gamberi e alici</div></div>
@@ -350,55 +368,43 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
       <div><div class="mi-n">Ananas</div></div>
       <div class="mi-p">€ 4.00</div>
     </div>
-    <div class="mi">
-      <div><div class="mi-n">Anguria</div></div>
-      <div class="mi-p">€ 4.00</div>
-    </div>
-    <div class="mi">
-      <div><div class="mi-n">Melone</div></div>
-      <div class="mi-p">€ 4.00</div>
-    </div>
-    <div class="mi">
-      <div><div class="mi-n">Tiramisù</div></div>
-      <div class="mi-p">€ 5.00</div>
-    </div>
   </div>
   <div class="menu-cat" data-cat="69b5ada9-543f-4575-88a0-f8311afd5ed7" style="display:none">
     
     <div class="mi">
-      <div><div class="mi-n">caprese di bufala</div></div>
+      <div><div class="mi-n">insalata di mare</div></div>
       
     </div>
     <div class="mi">
-      <div><div class="mi-n">selezione salumi formaggi e sottoli</div></div>
+      <div><div class="mi-n">Caponatina di verdure</div></div>
       
     </div>
     <div class="mi">
-      <div><div class="mi-n">Bruschetta e peperonata</div></div>
+      <div><div class="mi-n">focaccina prosciutto e mozzarella</div></div>
       
     </div>
     <div class="mi">
-      <div><div class="mi-n">Spaghettoni al pomodoro e basilico</div></div>
+      <div><div class="mi-n">Bucatini freschi trafilati al bronzo all'Amatriciana</div></div>
       
     </div>
     <div class="mi">
-      <div><div class="mi-n">Calamarata spada e melanzane</div></div>
+      <div><div class="mi-n">spaghetti alle vongole lupini</div></div>
       
     </div>
     <div class="mi">
-      <div><div class="mi-n">Tagliolini al ragù</div></div>
+      <div><div class="mi-n">Gnocchi di patate(alla sorrentina o ai quattroformaggi)</div></div>
       
     </div>
     <div class="mi">
-      <div><div class="mi-n">Braciola di maiale</div></div>
+      <div><div class="mi-n">Petto di Pollo alla piastra</div></div>
       
     </div>
     <div class="mi">
-      <div><div class="mi-n">Impepata di cozze</div></div>
+      <div><div class="mi-n">spezzatino di vitellino bianco e patate al forno</div></div>
       
     </div>
     <div class="mi">
-      <div><div class="mi-n">Pollo arrosto con patate</div></div>
+      <div><div class="mi-n">moscardini in umido</div></div>
       
     </div>
   </div></div>
