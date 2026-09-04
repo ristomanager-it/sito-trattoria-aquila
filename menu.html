@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Benvenuti alla Trattoria dell'Aquila, un angolo di tradizione culinaria nel cuore di Orte. La nostra missione è quella di portare in tavola i sapori a">
+<meta name="description" content="Facciamo la cucina del Lazio e dell'Umbria senza girarci intorno: bucatini all'amatriciana con guanciale croccante e pecorino, spaghettoni alla carbon">
 <meta property="og:title" content="Trattoria dell'Aquila">
 <meta property="og:image" content="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1RiDL4KXBZ6m54IspPpbTSTA0E7zXys9I.jpg">
 <title>Menu — Trattoria dell'Aquila</title>
@@ -40,12 +40,19 @@ a{text-decoration:none;color:inherit}
 .hl-icon{font-size:32px;margin-bottom:10px}
 .hl-t{font-size:14px;font-weight:800;color:#111827;margin-bottom:4px}
 .hl-d{font-size:12px;color:var(--grigio);line-height:1.5}
-.reel-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
-@media(max-width:500px){.reel-grid{grid-template-columns:1fr}}
+.reel-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:760px){.reel-grid{grid-template-columns:1fr;gap:26px}}
+.reel-blocco{display:grid;grid-template-columns:38% 1fr;gap:14px;align-items:start}
+@media(max-width:380px){.reel-blocco{grid-template-columns:1fr}}
+.reel-testo{padding:0}
+.reel-testo h3{font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;margin-bottom:4px}
+.reel-testo .occhiello{font-size:10px;letter-spacing:2px;color:var(--acc);text-transform:uppercase;margin-bottom:6px}
+.reel-testo p{font-size:14.5px;line-height:1.6;color:var(--grigio)}
+.reel-tocca{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:5px 10px;border-radius:999px;pointer-events:none}
 .cop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:cop 30s infinite}
 @keyframes cop{0%{opacity:0}3%{opacity:.55}16%{opacity:.55}20%{opacity:0}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.cop{animation:none;opacity:0}.cop:first-of-type{opacity:.55}}
-.reel-item{position:relative;aspect-ratio:9/16;max-height:62svh;overflow:hidden;background:var(--scuro);border-radius:14px}
+.reel-item{position:relative;aspect-ratio:3/4;max-height:38svh;overflow:hidden;background:var(--scuro);border-radius:12px;cursor:pointer}
 .reel-item video{width:100%;height:100%;object-fit:cover}
 .reel-item video,.reel-item img{width:100%;height:100%;object-fit:cover}
 .reel-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,18,9,.75) 0%,transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
@@ -88,6 +95,16 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
 .ft-links a{font-size:11px;color:rgba(255,255,255,.35)}
 .ft-copy{font-size:10px;color:rgba(255,255,255,.2)}</style>
 <script>
+// Video a schermo pieno al tocco: sul telefono un video incastrato in una
+// colonna non si guarda, cosi' si apre grande e con l'audio.
+function apriVideo(u){
+  var o=document.createElement('div');
+  o.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.94);display:flex;align-items:center;justify-content:center;padding:12px';
+  o.innerHTML='<video src="'+u+'" controls autoplay playsinline style="max-width:100%;max-height:92vh;border-radius:12px"></video>'
+    +'<div style="position:absolute;top:14px;right:18px;color:#fff;font-size:30px;line-height:1">&times;</div>';
+  o.onclick=function(){o.remove()};
+  document.body.appendChild(o);
+}
 (function(){
   var SID=sessionStorage.getItem('rf_sid')||(crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2));
   sessionStorage.setItem('rf_sid',SID);
@@ -142,7 +159,7 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
     <div class="eyebrow">Il menu</div>
     <h1 class="h2" style="margin-bottom:20px;">Cosa portiamo<br><em>in tavola</em></h1>
     
-    <div class="mcat"><button class="mcat-btn active" onclick="filtraMenu('25ab5dcc-3b09-4d9c-90ec-ce7ebe76faff',this)">Antipasti</button><button class="mcat-btn" onclick="filtraMenu('102664ab-6943-4c77-99dc-ce8d63c9383a',this)">Primi Piatti</button><button class="mcat-btn" onclick="filtraMenu('d618cceb-693a-4fd5-96d5-03a6242b66f1',this)">Secondi piatti</button><button class="mcat-btn" onclick="filtraMenu('a260f988-245b-4b4d-8022-16b39110650c',this)">La Griglia</button><button class="mcat-btn" onclick="filtraMenu('bcd6b97d-7957-4684-a4f4-8dc8581501c4',this)">insalatone e piatti fredd</button><button class="mcat-btn" onclick="filtraMenu('a9fdd814-b5db-4bb7-a4d5-e0a0b6e6118c',this)">Contorni</button><button class="mcat-btn" onclick="filtraMenu('0de780c8-c728-4129-81fe-57fa2caf3866',this)">Dessert</button><button class="mcat-btn" onclick="filtraMenu('69b5ada9-543f-4575-88a0-f8311afd5ed7',this)">🍽️ Menu del Giorno</button></div>
+    <div class="mcat"><button class="mcat-btn active" onclick="filtraMenu('25ab5dcc-3b09-4d9c-90ec-ce7ebe76faff',this)">Antipasti</button><button class="mcat-btn" onclick="filtraMenu('96c333b0-d4dc-49a6-9cb9-a538b0414d1c',this)">🍽️ Menu del Giorno</button><button class="mcat-btn" onclick="filtraMenu('102664ab-6943-4c77-99dc-ce8d63c9383a',this)">Primi Piatti</button><button class="mcat-btn" onclick="filtraMenu('d618cceb-693a-4fd5-96d5-03a6242b66f1',this)">Secondi piatti</button><button class="mcat-btn" onclick="filtraMenu('bcd6b97d-7957-4684-a4f4-8dc8581501c4',this)">insalatone e piatti fredd</button><button class="mcat-btn" onclick="filtraMenu('a9fdd814-b5db-4bb7-a4d5-e0a0b6e6118c',this)">Contorni</button><button class="mcat-btn" onclick="filtraMenu('0de780c8-c728-4129-81fe-57fa2caf3866',this)">Dessert</button></div>
     <div>
   <div class="menu-cat" data-cat="25ab5dcc-3b09-4d9c-90ec-ce7ebe76faff" style="">
     
@@ -164,7 +181,7 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
     </div>
     <div class="mi">
       <div><div class="mi-n">Bruschette al pomodoro</div></div>
-      <div class="mi-p">€ 3.50</div>
+      <div class="mi-p">€ 5.00</div>
     </div>
     <div class="mi">
       <div><div class="mi-n">insalata di mare</div></div>
@@ -175,12 +192,47 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
       <div class="mi-p">€ 10.00</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">Cubo di tonno al pane verde e mentuccia con zucchine marinate e mayonese di polpo</div></div>
-      <div class="mi-p">€ 15.00</div>
-    </div>
-    <div class="mi">
       <div><div class="mi-n">salmone stracciatella e miele</div></div>
       <div class="mi-p">€ 12.00</div>
+    </div>
+  </div>
+  <div class="menu-cat" data-cat="96c333b0-d4dc-49a6-9cb9-a538b0414d1c" style="display:none">
+    
+    <div class="mi">
+      <div><div class="mi-n">Polpetta di melanzane</div></div>
+      
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Fiori di zucca fritti in tempura</div></div>
+      
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Bruschette stracciatella e alici</div></div>
+      
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Spaghettoni al pomodoro e basilico</div></div>
+      
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Tagliatelle alla Norcina</div></div>
+      
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Paccheri alla norma</div></div>
+      
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Braciola di maiale</div></div>
+      
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Pollo al forno con patate</div></div>
+      
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Seppia alla griglia con insalata</div></div>
+      
     </div>
   </div>
   <div class="menu-cat" data-cat="102664ab-6943-4c77-99dc-ce8d63c9383a" style="display:none">
@@ -202,24 +254,24 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
       <div class="mi-p">€ 12.00</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">Paccheri freschi trafilati al bronzo al Ragù classico</div><div class="mi-d">Pasta avvolta da un ragù saporito e profumato, preparato con carne di vitello, maiale e manzo</div></div>
-      <div class="mi-p">€ 11.00</div>
+      <div><div class="mi-n">Paccheri freschi trafilati al bronzo con filetti di sanmarzano e basilico</div></div>
+      <div class="mi-p">€ 10.00</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">Spaghettoni al pomodoro e basilico</div></div>
-      <div class="mi-p">€ 9.00</div>
+      <div><div class="mi-n">trofie al pesto</div></div>
+      <div class="mi-p">€ 11.00</div>
     </div>
     <div class="mi">
       <div><div class="mi-n">Spaghettoni alle vongole</div></div>
       <div class="mi-p">€ 15.00</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">Tagliolini ai frutti di mare</div></div>
-      <div class="mi-p">€ 13.00</div>
+      <div><div class="mi-n">Lasagna alle melanzane</div></div>
+      <div class="mi-p">€ 12.00</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">trofie al pesto</div></div>
-      <div class="mi-p">€ 11.00</div>
+      <div><div class="mi-n">Tagliolini ai frutti di mare</div></div>
+      <div class="mi-p">€ 13.00</div>
     </div>
   </div>
   <div class="menu-cat" data-cat="d618cceb-693a-4fd5-96d5-03a6242b66f1" style="display:none">
@@ -233,12 +285,12 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
       <div class="mi-p">€ 9.50</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">Costata di vitello</div><div class="mi-d">Costata di vitello giovane (8–12 mesi), cotta alla griglia e servita al naturale, per esaltarne tenerezza e sapore.</div></div>
-      <div class="mi-p">€ 15.50</div>
-    </div>
-    <div class="mi">
       <div><div class="mi-n">Coniglio porchettato al finocchietto</div><div class="mi-d">Coniglio arrotolato con erbe e finocchietto, cotto dolcemente e rifinito al tegame. Tradizione che profuma di campagna.</div></div>
       <div class="mi-p">€ 13.50</div>
+    </div>
+    <div class="mi">
+      <div><div class="mi-n">Costata di vitello</div><div class="mi-d">Costata di vitello giovane (8–12 mesi), cotta alla griglia e servita al naturale, per esaltarne tenerezza e sapore.</div></div>
+      <div class="mi-p">€ 15.50</div>
     </div>
     <div class="mi">
       <div><div class="mi-n">Cotoletta e patatine</div></div>
@@ -253,16 +305,12 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
       <div class="mi-p">€ 10.50</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">Filetto di vitello alla griglia</div></div>
-      <div class="mi-p">€ 20.00</div>
+      <div><div class="mi-n">Petto di Pollo alla piastra</div><div class="mi-d">Petto di Pollo alla piastra con misticanze al limone</div></div>
+      <div class="mi-p">€ 10.50</div>
     </div>
     <div class="mi">
       <div><div class="mi-n">Straccetti di vitellone, rucola pomodorini e scaglie di reggiano</div><div class="mi-d">Straccetti di vitellone scottati al salto, pomodorini dolci e rucola fresca, chiusura in scaglie di Parmigiano Reggiano DOP e filo d’olio buono.</div></div>
       <div class="mi-p">€ 13.50</div>
-    </div>
-    <div class="mi">
-      <div><div class="mi-n">Filetto di vitello al tartufo estivo</div></div>
-      <div class="mi-p">€ 24.00</div>
     </div>
     <div class="mi">
       <div><div class="mi-n">Frittura mista calamari gamberi e alici</div></div>
@@ -273,23 +321,12 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
       <div class="mi-p">€ 18.50</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">Petto di Pollo alla piastra</div><div class="mi-d">Petto di Pollo alla piastra con misticanze al limone</div></div>
-      <div class="mi-p">€ 10.50</div>
-    </div>
-    <div class="mi">
       <div><div class="mi-n">Polpo grigliato</div></div>
       <div class="mi-p">€ 15.00</div>
     </div>
     <div class="mi">
       <div><div class="mi-n">Salmone scottato cipolla e spinaci</div></div>
       <div class="mi-p">€ 13.50</div>
-    </div>
-  </div>
-  <div class="menu-cat" data-cat="a260f988-245b-4b4d-8022-16b39110650c" style="display:none">
-    
-    <div class="mi">
-      <div><div class="mi-n">Salsicce e broccoletti</div><div class="mi-d">Salsicce artigianali dell'Azienda Zooagricola Fiore, cotte alla griglia e servite con broccoletti ripassati, preparati con verdure fresche di giornata.</div></div>
-      <div class="mi-p">€ 10.50</div>
     </div>
   </div>
   <div class="menu-cat" data-cat="bcd6b97d-7957-4684-a4f4-8dc8581501c4" style="display:none">
@@ -368,44 +405,21 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
       <div><div class="mi-n">Ananas</div></div>
       <div class="mi-p">€ 4.00</div>
     </div>
-  </div>
-  <div class="menu-cat" data-cat="69b5ada9-543f-4575-88a0-f8311afd5ed7" style="display:none">
-    
     <div class="mi">
-      <div><div class="mi-n">insalata di mare</div></div>
-      
+      <div><div class="mi-n">Anguria</div></div>
+      <div class="mi-p">€ 4.00</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">Caponatina di verdure</div></div>
-      
+      <div><div class="mi-n">Melone</div></div>
+      <div class="mi-p">€ 4.00</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">focaccina prosciutto e mozzarella</div></div>
-      
+      <div><div class="mi-n">Tiramisù</div></div>
+      <div class="mi-p">€ 5.00</div>
     </div>
     <div class="mi">
-      <div><div class="mi-n">Bucatini freschi trafilati al bronzo all'Amatriciana</div></div>
-      
-    </div>
-    <div class="mi">
-      <div><div class="mi-n">spaghetti alle vongole lupini</div></div>
-      
-    </div>
-    <div class="mi">
-      <div><div class="mi-n">Gnocchi di patate(alla sorrentina o ai quattroformaggi)</div></div>
-      
-    </div>
-    <div class="mi">
-      <div><div class="mi-n">Petto di Pollo alla piastra</div></div>
-      
-    </div>
-    <div class="mi">
-      <div><div class="mi-n">spezzatino di vitellino bianco e patate al forno</div></div>
-      
-    </div>
-    <div class="mi">
-      <div><div class="mi-n">moscardini in umido</div></div>
-      
+      <div><div class="mi-n">Torta della nonna</div></div>
+      <div class="mi-p">€ 5.00</div>
     </div>
   </div></div>
     <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="margin-top:32px;">🗓 Prenota un tavolo</a>
