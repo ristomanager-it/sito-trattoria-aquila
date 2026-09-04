@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<meta name="description" content="Benvenuti alla Trattoria dell'Aquila, un angolo di tradizione culinaria nel cuore di Orte. La nostra missione è quella di portare in tavola i sapori a">
+<meta name="description" content="Facciamo la cucina del Lazio e dell'Umbria senza girarci intorno: bucatini all'amatriciana con guanciale croccante e pecorino, spaghettoni alla carbon">
 <meta property="og:title" content="Trattoria dell'Aquila">
 <meta property="og:image" content="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1RiDL4KXBZ6m54IspPpbTSTA0E7zXys9I.jpg">
 <title>Trattoria dell'Aquila — Trattoria dell'Aquila</title>
@@ -40,12 +40,19 @@ a{text-decoration:none;color:inherit}
 .hl-icon{font-size:32px;margin-bottom:10px}
 .hl-t{font-size:14px;font-weight:800;color:#111827;margin-bottom:4px}
 .hl-d{font-size:12px;color:var(--grigio);line-height:1.5}
-.reel-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px}
-@media(max-width:500px){.reel-grid{grid-template-columns:1fr}}
+.reel-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+@media(max-width:760px){.reel-grid{grid-template-columns:1fr;gap:26px}}
+.reel-blocco{display:grid;grid-template-columns:38% 1fr;gap:14px;align-items:start}
+@media(max-width:380px){.reel-blocco{grid-template-columns:1fr}}
+.reel-testo{padding:0}
+.reel-testo h3{font-family:'Cormorant Garamond',serif;font-size:21px;font-style:italic;margin-bottom:4px}
+.reel-testo .occhiello{font-size:10px;letter-spacing:2px;color:var(--acc);text-transform:uppercase;margin-bottom:6px}
+.reel-testo p{font-size:14.5px;line-height:1.6;color:var(--grigio)}
+.reel-tocca{position:absolute;right:10px;bottom:10px;background:rgba(0,0,0,.55);color:#fff;font-size:11px;padding:5px 10px;border-radius:999px;pointer-events:none}
 .cop{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:cop 30s infinite}
 @keyframes cop{0%{opacity:0}3%{opacity:.55}16%{opacity:.55}20%{opacity:0}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.cop{animation:none;opacity:0}.cop:first-of-type{opacity:.55}}
-.reel-item{position:relative;aspect-ratio:9/16;max-height:62svh;overflow:hidden;background:var(--scuro);border-radius:14px}
+.reel-item{position:relative;aspect-ratio:3/4;max-height:38svh;overflow:hidden;background:var(--scuro);border-radius:12px;cursor:pointer}
 .reel-item video{width:100%;height:100%;object-fit:cover}
 .reel-item video,.reel-item img{width:100%;height:100%;object-fit:cover}
 .reel-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,18,9,.75) 0%,transparent 50%);display:flex;flex-direction:column;justify-content:flex-end;padding:18px}
@@ -88,6 +95,16 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
 .ft-links a{font-size:11px;color:rgba(255,255,255,.35)}
 .ft-copy{font-size:10px;color:rgba(255,255,255,.2)}</style>
 <script>
+// Video a schermo pieno al tocco: sul telefono un video incastrato in una
+// colonna non si guarda, cosi' si apre grande e con l'audio.
+function apriVideo(u){
+  var o=document.createElement('div');
+  o.style.cssText='position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.94);display:flex;align-items:center;justify-content:center;padding:12px';
+  o.innerHTML='<video src="'+u+'" controls autoplay playsinline style="max-width:100%;max-height:92vh;border-radius:12px"></video>'
+    +'<div style="position:absolute;top:14px;right:18px;color:#fff;font-size:30px;line-height:1">&times;</div>';
+  o.onclick=function(){o.remove()};
+  document.body.appendChild(o);
+}
 (function(){
   var SID=sessionStorage.getItem('rf_sid')||(crypto.randomUUID?crypto.randomUUID():Math.random().toString(36).slice(2));
   sessionStorage.setItem('rf_sid',SID);
@@ -143,8 +160,8 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
   <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.2) 60%,transparent 100%);"></div>
   <div style="position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:0 20px 34px;text-align:left;">
     <div class="eyebrow">Orte · uscita A1</div>
-    <h1 class="h2" style="color:#fff;font-size:clamp(31px,8vw,58px);line-height:1.06;margin:8px 0 10px;text-shadow:0 2px 12px rgba(0,0,0,.5);">Tradizione e Sapori Autentici</h1>
-    <p style="font-size:16px;color:rgba(255,255,255,.9);margin-bottom:20px;max-width:34ch;text-shadow:0 1px 6px rgba(0,0,0,.5);">Un viaggio culinario nel cuore di Orte.</p>
+    <h1 class="h2" style="color:#fff;font-size:clamp(31px,8vw,58px);line-height:1.06;margin:8px 0 10px;text-shadow:0 2px 12px rgba(0,0,0,.5);">Ci si ferma a mangiare, non a fare benzina</h1>
+    <p style="font-size:16px;color:rgba(255,255,255,.9);margin-bottom:20px;max-width:34ch;text-shadow:0 1px 6px rgba(0,0,0,.5);">Trattoria dentro l'Hotel Aquila, a un minuto dall'uscita A1 di Orte. Cucina laziale e umbra, pesce scelto la mattina, menu business a pranzo. Parcheggio gratuito.</p>
     <div style="display:flex;gap:10px;flex-wrap:wrap;">
       <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="font-size:15px;padding:14px 26px;">🗓 Prenota un tavolo</a>
       <a class="btn-ghost" href="tel:0761402673">📞 Chiama</a>
@@ -162,14 +179,20 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
 <section class="section" id="cucina">
   <div class="eyebrow">La nostra cucina</div>
   <h2 class="h2">Terra e mare,<br><em>scelti ogni giorno</em></h2>
-  <div class="body"><p>Benvenuti alla Trattoria dell'Aquila, un angolo di tradizione culinaria nel cuore di Orte. La nostra missione è quella di portare in tavola i sapori autentici del Lazio, utilizzando ingredienti freschi e di alta qualità, selezionati con passione e dedizione. Ogni piatto è una celebrazione delle ricette di famiglia che si tramandano di generazione in generazione, raccontando storie di amore per la buona cucina e per le tradizioni gastronomiche della nostra terra.</p><p>In Trattoria dell'Aquila, crediamo che ogni pasto debba essere un'esperienza indimenticabile. La nostra cucina è un viaggio attraverso i sapori e i profumi del Lazio, dove ogni morso è un omaggio alla nostra cultura culinaria. Siamo orgogliosi di offrire un ambiente accogliente e familiare, dove gli ospiti possono gustare piatti preparati con cura e passione, immergendosi in un'atmosfera calda e autentica.</p></div>
+  <div class="body"><p>Facciamo la cucina del Lazio e dell'Umbria senza girarci intorno: bucatini all'amatriciana con guanciale croccante e pecorino, spaghettoni alla carbonara mantecati al momento, tagliatelle alla norcina con salsiccia umbra e tartufo. La pasta è fresca e trafilata al bronzo. Dal mare arriva quello che si trova la mattina: spaghettoni alle vongole, frittura di calamari gamberi e alici, polpo grigliato. Alla griglia carne di un'azienda a pochi chilometri da qui: arrosticini, costata, salsicce e broccoletti.</p><p>I primi stanno tra 9 e 16 euro, i secondi tra 9,50 e 24. A pranzo c'è il menu business a 25 euro. Siamo dentro l'Hotel Aquila, a un minuto dall'uscita A1 di Orte: si esce dal casello, si gira e si è arrivati. Parcheggio gratuito e largo, ci stanno anche furgoni e camper, e sopra ci sono le camere se la giornata è stata lunga. Se avete poco tempo ditelo appena vi sedete: vi portiamo primo e secondo senza farvi aspettare.</p></div>
   <a class="btn" href="chi-siamo.html">Scopri chi siamo →</a>
   <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="margin-left:10px;">🗓 Prenota un tavolo</a>
 </section>
 
 <div class="reel-grid" style="max-width:100%;margin:0 auto;">
-  <div class="reel-item"><video src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1rEqWjcC9Yb3rqeF_1q4MUbTqr_kKwxpR.mp4" autoplay muted loop playsinline></video><div class="reel-ov"><div class="reel-lbl">I primi di terra</div><div class="reel-sub">Tradizione · Territorio</div></div></div>
-  <div class="reel-item"><video src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1ydnSCFzxL6vRZ8gupQUV4qCh-H3EIASa.mp4" autoplay muted loop playsinline></video><div class="reel-ov"><div class="reel-lbl">Il nostro mare</div><div class="reel-sub">Scelto ogni mattina</div></div></div>
+  <div class="reel-blocco">
+    <div class="reel-item" onclick="apriVideo('https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1rEqWjcC9Yb3rqeF_1q4MUbTqr_kKwxpR.mp4')"><video src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1rEqWjcC9Yb3rqeF_1q4MUbTqr_kKwxpR.mp4" autoplay muted loop playsinline></video><div class="reel-tocca">Tocca</div></div>
+    <div class="reel-testo"><div class="occhiello">Tradizione · Territorio</div><h3>I primi di terra</h3><p>I primi stanno tra 9 e 16 euro, i secondi tra 9,50 e 24. A pranzo c'è il menu business a 25 euro. Siamo dentro l'Hotel Aquila, a un minuto dall'uscita A1 di Orte: si esce dal casello, si gira e si è arrivati. Parcheggio gratuito e largo, ci stanno anche furgoni e camper, e sopra ci sono le camere se la giornata è stata lunga. Se avete poco tempo ditelo appena vi sedete: vi portiamo primo e secondo senza farvi aspettare.</p></div>
+  </div>
+  <div class="reel-blocco">
+    <div class="reel-item" onclick="apriVideo('https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1ydnSCFzxL6vRZ8gupQUV4qCh-H3EIASa.mp4')"><video src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1ydnSCFzxL6vRZ8gupQUV4qCh-H3EIASa.mp4" autoplay muted loop playsinline></video><div class="reel-tocca">Tocca</div></div>
+    <div class="reel-testo"><div class="occhiello">Scelto ogni mattina</div><h3>Il nostro mare</h3><p>Alla Trattoria dell'Aquila, ogni piatto è un viaggio nei sapori del mare, un invito a gustare la freschezza e la tradizione della nostra cucina.</p></div>
+  </div>
 </div>
 
 <div class="mare-s" id="mare">
@@ -210,7 +233,7 @@ footer{background:#0e0a04;padding:36px 20px;text-align:center}
     <iframe style="width:100%;height:200px;border-radius:12px;border:none;margin:20px 0;opacity:.8" src="https://maps.google.com/maps?q=42.4597,12.3857&z=15&output=embed" allowfullscreen loading="lazy"></iframe>
     <div class="map-g">
       <div><div class="map-lbl">Indirizzo</div><div class="map-v">Via Lazio 4/b, Orte</div></div>
-      <div><div class="map-lbl">Orari</div><div class="map-v"></div></div>
+      <div><div class="map-lbl">Orari</div><div class="map-v">Pranzo: Lunedì-sabato 12:00-14:30 (domenica chiuso a pranzo)<br>Cena: Tutti i giorni 19:00-22:30</div></div>
       <div><div class="map-lbl">Telefono</div><div class="map-v"><a href="tel:0761402673">0761402673</a></div></div>
       <div><div class="map-lbl">Email</div><div class="map-v"><a href="mailto:Trattoriadellaquila@gmail.com">Trattoriadellaquila@gmail.com</a></div></div>
     </div>
