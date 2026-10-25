@@ -15,9 +15,9 @@ function carica(){
   if(!GTM&&(GA4||ADS)&&!window.__gtagOk){window.__gtagOk=1;var gs=document.createElement('script');gs.async=true;gs.src='https://www.googletagmanager.com/gtag/js?id='+(GA4||ADS);document.head.appendChild(gs);gtag('js',new Date());if(GA4)gtag('config',GA4);if(ADS)gtag('config',ADS);}
   if(GTM&&!window.__gtmOk){window.__gtmOk=1;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',GTM);}
 }
-var MAP={cta_prenota:'InitiateCheckout',click_telefono:'Contact',click_menu:'ViewContent',click_mappa:'FindLocation'};
+var MAP={cta_prenota:'InitiateCheckout',click_telefono:'Contact',wame:'Contact',click_menu:'ViewContent',click_mappa:'FindLocation',prenotazione_completata:'Schedule'};
 window.rfDecisione=st;
-window.rfEvento=function(el){if(st()!=='si')return;try{if(window.fbq&&MAP[el])fbq('track',MAP[el]);dataLayer.push({event:'rf_'+el});if(!GTM&&(GA4||ADS))gtag('event',el);}catch(e){}};
+window.rfEvento=function(el){if(st()!=='si')return;try{if(window.fbq&&MAP[el])fbq('track',MAP[el]);dataLayer.push({event:'rf_'+el});if(!GTM&&(GA4||ADS)){gtag('event',el);if(el==='click_telefono')gtag('event','tel');}}catch(e){}};
 function banner(){
   var b=document.createElement('div');
   b.style.cssText='position:fixed;left:12px;right:12px;bottom:12px;z-index:9998;background:#fff;color:#1f2937;border:1px solid #e5e7eb;border-radius:14px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.28);font:14px/1.45 system-ui,sans-serif;max-width:520px;margin:0 auto;';
@@ -56,6 +56,7 @@ a{text-decoration:none;color:inherit}
 .nav-panel a{color:#fff;font-size:19px;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.12)}
 .nav-panel .np-p{background:var(--btn);border-radius:10px;text-align:center;font-weight:800;margin-top:14px;border:0}
 .nav-panel .np-c{background:#fff;color:var(--btn);border-radius:10px;text-align:center;font-weight:800;margin-top:8px;border:0}
+.nav-panel .np-w{background:#25D366;color:#073b1f;border-radius:10px;text-align:center;font-weight:800;margin-top:8px;border:0}
 @media(min-width:601px){.nav-panel{display:none!important}}
 .cta-bar{position:sticky;bottom:0;z-index:90;display:flex;background:var(--caldo);border-top:1px solid #d8ccba;box-shadow:0 -4px 14px rgba(0,0,0,.10)}
 .cta-bar a{flex:1;padding:14px 4px;text-align:center;font-size:12.5px;font-weight:800;letter-spacing:.2px}
@@ -191,6 +192,8 @@ function apriVideo(u){
       window._rfTrack('click','click_telefono',{valore:href});
     } else if(href.includes('menu.html')||a.classList.contains('cta-m')){
       window._rfTrack('click','click_menu',{});
+    } else if(href.includes('wa.me')){
+      window._rfTrack('click','wame',{valore:'whatsapp'});
     } else if(href.includes('contatti.html')||href.includes('maps')){
       window._rfTrack('click','click_mappa',{});
     }
@@ -228,6 +231,7 @@ function apriVideo(u){
   <a href="index.html">Home</a><a href="chi-siamo.html">Chi siamo</a><a href="menu.html">Menu</a><a href="contatti.html">Contatti</a>
   <a class="np-p" href="https://app.ristoflow-ai.com/#/booking/social">🗓 Prenota un tavolo</a>
   <a class="np-c" href="tel:0761402673">📞 Chiama</a>
+  <a class="np-w" href="https://wa.me/393759907993?text=Buongiorno%2C%20vorrei%20prenotare%20un%20tavolo.%20">💬 WhatsApp</a>
 </div>
 <div style="position:relative;min-height:82svh;display:flex;align-items:flex-end;overflow:hidden;">
   <div style="position:absolute;inset:0;background:var(--scuro);">
@@ -255,6 +259,7 @@ if(txt){el.textContent=(ok?'🟢 ':'🔴 ')+txt;el.style.display='inline-block';
         <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="flex:1 1 0;text-align:center;font-size:14.5px;padding:15px 8px;margin:6px 0 0;">🗓 Prenota un tavolo</a>
         <a class="btn" href="tel:0761402673" style="flex:1 1 0;text-align:center;font-size:14.5px;padding:15px 8px;margin:6px 0 0;background:#fff;color:var(--btn);">📞 Chiama</a>
       </div>
+      <a href="https://wa.me/393759907993?text=Buongiorno%2C%20vorrei%20prenotare%20un%20tavolo.%20" style="display:block;width:100%;box-sizing:border-box;text-align:center;background:#25D366;color:#073b1f;font-weight:800;font-size:14.5px;padding:13px 8px;border-radius:8px;">💬 Scrivici su WhatsApp</a>
     </div>
     <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:18px;"><a href="#recensioni" style="border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.16);color:#fff;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:700;">★ 5,0 su 5 recensioni ›</a><span style="border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.88);padding:5px 11px;border-radius:999px;font-size:12.5px;">Aperti pranzo e cena</span></div>
   </div>
