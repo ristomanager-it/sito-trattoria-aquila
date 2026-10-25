@@ -4,6 +4,33 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="description" content="Facciamo la cucina del Lazio e dell'Umbria senza girarci intorno: bucatini all'amatriciana con guanciale croccante e pecorino, spaghettoni alla carbon">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Trattoria dell'Aquila","url":"https://trattoriadellaquila.it","hasMenu":"https://trattoriadellaquila.it/menu.html","telephone":"0761402673","image":"https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1RiDL4KXBZ6m54IspPpbTSTA0E7zXys9I.jpg","address":{"@type":"PostalAddress","streetAddress":"Via Lazio 4/b","addressLocality":"Orte","addressCountry":"IT"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"12:00","closes":"14:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"19:00","closes":"22:30"}],"acceptsReservations":true}</script>
+<script>(function(){
+var META='',GTM='',GA4='G-TZQVKD4KEV',ADS='',K='rf_consenso';
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
+function st(){try{return localStorage.getItem(K);}catch(e){return null;}}
+function carica(){
+  gtag('consent','update',{ad_storage:'granted',ad_user_data:'granted',ad_personalization:'granted',analytics_storage:'granted'});
+  if(META&&!window.fbq){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',META);fbq('track','PageView');}
+  if(!GTM&&(GA4||ADS)&&!window.__gtagOk){window.__gtagOk=1;var gs=document.createElement('script');gs.async=true;gs.src='https://www.googletagmanager.com/gtag/js?id='+(GA4||ADS);document.head.appendChild(gs);gtag('js',new Date());if(GA4)gtag('config',GA4);if(ADS)gtag('config',ADS);}
+  if(GTM&&!window.__gtmOk){window.__gtmOk=1;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',GTM);}
+}
+var MAP={cta_prenota:'InitiateCheckout',click_telefono:'Contact',click_menu:'ViewContent',click_mappa:'FindLocation'};
+window.rfDecisione=st;
+window.rfEvento=function(el){if(st()!=='si')return;try{if(window.fbq&&MAP[el])fbq('track',MAP[el]);dataLayer.push({event:'rf_'+el});if(!GTM&&(GA4||ADS))gtag('event',el);}catch(e){}};
+function banner(){
+  var b=document.createElement('div');
+  b.style.cssText='position:fixed;left:12px;right:12px;bottom:12px;z-index:9998;background:#fff;color:#1f2937;border:1px solid #e5e7eb;border-radius:14px;padding:14px;box-shadow:0 10px 30px rgba(0,0,0,.28);font:14px/1.45 system-ui,sans-serif;max-width:520px;margin:0 auto;';
+  b.innerHTML='<div style="margin-bottom:10px;">Usiamo i cookie per misurare le visite e mostrarti i nostri annunci. Puoi accettare o rifiutare: il sito funziona comunque.</div>'
+    +'<div style="display:flex;gap:8px;"><button id="rf-ck-no" style="flex:1;border:1px solid #d1d5db;background:#f3f4f6;color:#111827;border-radius:10px;padding:11px;font-weight:700;font-size:14px;">Solo necessari</button>'
+    +'<button id="rf-ck-si" style="flex:1;border:0;background:var(--btn);color:#fff;border-radius:10px;padding:11px;font-weight:800;font-size:14px;">Accetta</button></div>';
+  document.body.appendChild(b);
+  function fine(v){try{localStorage.setItem(K,v);}catch(e){}b.remove();if(v==='si')carica();}
+  b.querySelector('#rf-ck-si').onclick=function(){fine('si');};
+  b.querySelector('#rf-ck-no').onclick=function(){fine('no');};
+}
+if(st()==='si')carica();else if(st()!=='no')document.addEventListener('DOMContentLoaded',banner);
+})();</script>
 <meta property="og:title" content="Trattoria dell'Aquila">
 <meta property="og:image" content="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1RiDL4KXBZ6m54IspPpbTSTA0E7zXys9I.jpg">
 <title>Trattoria dell'Aquila — Trattoria dell'Aquila</title>
@@ -22,7 +49,14 @@ a{text-decoration:none;color:inherit}
 .nav-links a{font-size:12px;color:rgba(255,255,255,.75);letter-spacing:.4px}
 .nav-links a:hover{color:var(--accl)}
 .nav-cta{background:var(--btn);color:#fff;font-size:12px;font-weight:800;padding:8px 18px;border-radius:6px}
-@media(max-width:600px){.nav-links{display:none}}
+@media(max-width:600px){.nav-links{display:none}.nav-burger{display:block}}
+.nav-burger{display:none;background:transparent;border:0;color:#fff;font-size:30px;line-height:1;padding:4px 8px;cursor:pointer}
+.nav-panel{display:none;position:fixed;top:68px;left:0;right:0;z-index:99;background:rgba(26,18,9,.97);padding:6px 20px 18px;flex-direction:column;box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.nav-panel.open{display:flex}
+.nav-panel a{color:#fff;font-size:19px;padding:14px 4px;border-bottom:1px solid rgba(255,255,255,.12)}
+.nav-panel .np-p{background:var(--btn);border-radius:10px;text-align:center;font-weight:800;margin-top:14px;border:0}
+.nav-panel .np-c{background:#fff;color:var(--btn);border-radius:10px;text-align:center;font-weight:800;margin-top:8px;border:0}
+@media(min-width:601px){.nav-panel{display:none!important}}
 .cta-bar{position:sticky;bottom:0;z-index:90;display:flex;background:var(--caldo);border-top:1px solid #d8ccba;box-shadow:0 -4px 14px rgba(0,0,0,.10)}
 .cta-bar a{flex:1;padding:14px 4px;text-align:center;font-size:12.5px;font-weight:800;letter-spacing:.2px}
 .cta-p{background:var(--btn);color:#fff}
@@ -130,6 +164,7 @@ function apriVideo(u){
   var PAGINA=location.pathname.split('/').pop().replace('.html','')||'home';
   window._rfTrack=function(tipo,elemento,extra){
     if(ESCL)return;
+    try{window.rfEvento&&window.rfEvento(elemento);}catch(e){}
     var p=new URLSearchParams(location.search);
     fetch('https://cuhcscpvhypoaplcmtjk.supabase.co/functions/v1/track',{
       method:'POST',headers:{'Content-Type':'application/json'},
@@ -150,7 +185,7 @@ function apriVideo(u){
     if(!a)return;
     var href=a.href||'';
     if(href.includes('prenotazione-online')||href.includes('booking')||a.classList.contains('nav-cta')||a.classList.contains('btn')||a.classList.contains('cta-p')){
-      try{if(/ristoflow-ai.com/.test(href)&&!/utm_source=/.test(href)&&SRC){var UU=new URL(href);UU.searchParams.set('utm_source',SRC);UU.searchParams.set('rf_sid',SID);a.href=UU.toString();}}catch(e){}
+      try{if(/ristoflow-ai.com/.test(href)&&!/utm_source=/.test(href)&&SRC){var UU=new URL(href);UU.searchParams.set('utm_source',SRC);UU.searchParams.set('rf_sid',SID);var DC=window.rfDecisione&&window.rfDecisione();if(DC)UU.searchParams.set('rf_c',DC==='si'?'1':'0');a.href=UU.toString();}}catch(e){}
       window._rfTrack('click','cta_prenota',{valore:href.slice(0,80)});
     } else if(a.classList.contains('cta-c')||href.startsWith('tel:')){
       window._rfTrack('click','click_telefono',{valore:href});
@@ -187,8 +222,13 @@ function apriVideo(u){
     <a href="index.html">Home</a><a href="chi-siamo.html">Chi siamo</a>
     <a href="menu.html">Menu</a><a href="contatti.html">Contatti</a>
   </div>
-  <!-- intestazione libera: Prenota sta nel grande pulsante sotto e nella barra in basso -->
+  <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false" onclick="var p=document.getElementById('nav-panel');var o=p.classList.toggle('open');this.setAttribute('aria-expanded',o);this.textContent=o?'✕':'☰';">☰</button>
 </nav>
+<div id="nav-panel" class="nav-panel">
+  <a href="index.html">Home</a><a href="chi-siamo.html">Chi siamo</a><a href="menu.html">Menu</a><a href="contatti.html">Contatti</a>
+  <a class="np-p" href="https://app.ristoflow-ai.com/#/booking/social">🗓 Prenota un tavolo</a>
+  <a class="np-c" href="tel:0761402673">📞 Chiama</a>
+</div>
 <div style="position:relative;min-height:82svh;display:flex;align-items:flex-end;overflow:hidden;">
   <div style="position:absolute;inset:0;background:var(--scuro);">
     <img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1wsOKEtB8zZ0qXSNMVRnbQkicEEc7lDiF.jpg" class="cop" style="animation-delay:0s" alt=""><img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1ShtHUSf1WXut2aD3w0-3qrLacjZuTexC.jpg" class="cop" style="animation-delay:5s" alt=""><img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1yXSidNVw1kKY28I8p6E2hFofFHBsC7Ba.jpg" class="cop" style="animation-delay:10s" alt=""><img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1TQFUy8Xd1HwDKa22tbnc-Fa6lpelgeK2.jpg" class="cop" style="animation-delay:15s" alt=""><img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1jWg8oX5EQEBom7RdEIjMvm3tlpLQn_be.jpg" class="cop" style="animation-delay:20s" alt=""><img src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1RS8yexCpXuHdZDQ-wlC8OtTku6tzMuKj.jpg" class="cop" style="animation-delay:25s" alt="">
