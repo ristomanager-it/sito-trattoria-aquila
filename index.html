@@ -16,8 +16,8 @@ body{font-family:'Playfair Display',system-ui,sans-serif;background:#fff;color:v
 a{text-decoration:none;color:inherit}
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:rgba(26,18,9,.92);backdrop-filter:blur(12px)}
 .nav-logo{display:flex;align-items:center;gap:8px}
-.nav-logo img{width:32px;height:32px;border-radius:50%;object-fit:cover}
-.nav-logo span{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--accl);letter-spacing:.3px}
+.nav-logo img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.nav-logo span{font-family:'Cormorant Garamond',serif;font-size:clamp(21px,5.6vw,30px);font-weight:700;color:var(--accl);letter-spacing:.3px;line-height:1.1}
 .nav-links{display:flex;gap:18px}
 .nav-links a{font-size:12px;color:rgba(255,255,255,.75);letter-spacing:.4px}
 .nav-links a:hover{color:var(--accl)}
@@ -27,8 +27,8 @@ a{text-decoration:none;color:inherit}
 .cta-bar a{flex:1;padding:14px 4px;text-align:center;font-size:12.5px;font-weight:800;letter-spacing:.2px}
 .cta-p{background:var(--btn);color:#fff}
 .cta-c{background:#2e7d32;color:#fff}
-.cta-i{background:#fff;color:var(--btn)}
-.cta-m{background:#fff;color:#4b3b25;border-left:1px solid #e6dccb}
+.cta-i{background:#1f5f8b;color:#fff}
+.cta-m{background:#efe6d6;color:#4b3b25}
 .section{padding:72px 20px;max-width:700px;margin:0 auto}
 .eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--acc);margin-bottom:10px;font-weight:600}
 .h2{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,5vw,44px);font-weight:600;line-height:1.1;margin-bottom:16px}
@@ -75,7 +75,7 @@ a{text-decoration:none;color:inherit}
 .mi-d{font-size:11px;color:var(--grigio);margin-top:2px;line-height:1.4}
 .mi-p{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--acc);font-weight:600;white-space:nowrap}
 .loc-img{width:100%;height:280px;object-fit:cover;display:block}
-.rev-bg{background:var(--caldo);padding:72px 20px}
+.rev-bg{background:var(--caldo);padding:72px 20px;scroll-margin-top:64px}
 .rev-c{background:#fff;border-radius:12px;padding:20px;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
 .rev-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:8px;margin:0 -20px;padding-left:20px;padding-right:20px}
 .rev-strip::-webkit-scrollbar{display:none}
@@ -187,7 +187,7 @@ function apriVideo(u){
     <a href="index.html">Home</a><a href="chi-siamo.html">Chi siamo</a>
     <a href="menu.html">Menu</a><a href="contatti.html">Contatti</a>
   </div>
-  <a class="nav-cta" href="https://app.ristoflow-ai.com/#/booking/social">Prenota un tavolo</a>
+  <!-- intestazione libera: Prenota sta nel grande pulsante sotto e nella barra in basso -->
 </nav>
 <div style="position:relative;min-height:82svh;display:flex;align-items:flex-end;overflow:hidden;">
   <div style="position:absolute;inset:0;background:var(--scuro);">
@@ -195,8 +195,8 @@ function apriVideo(u){
   </div>
   <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,rgba(0,0,0,.1) 55%,transparent 100%);"></div>
   <div style="position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:0 20px 34px;text-align:left;">
-    <div id="rf-aperto" style="display:none;background:rgba(255,255,255,.95);color:#1f2937;font-size:13px;font-weight:700;padding:6px 12px;border-radius:999px;margin-bottom:10px;"></div>
-    <script>(function(){var S=[{"da":"12:00","a":"14:30","chiusi":[0]},{"da":"19:00","a":"22:30","chiusi":[]}];var el=document.getElementById('rf-aperto');if(!S.length||!el)return;
+    <!-- l'indicatore Aperto/Chiuso sta sopra i pulsanti Prenota e Chiama -->
+    <script>document.addEventListener('DOMContentLoaded',function(){var S=[{"da":"12:00","a":"14:30","chiusi":[0]},{"da":"19:00","a":"22:30","chiusi":[]}];var el=document.getElementById('rf-aperto');if(!S.length||!el)return;
 var n=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Rome'}));var g=n.getDay(),m=n.getHours()*60+n.getMinutes();
 function mm(h){var p=h.split(':');return (+p[0])*60+(+p[1]);}
 function aperta(s,d){return s.chiusi.indexOf(d)<0;}
@@ -205,15 +205,18 @@ for(var i=0;i<S.length;i++){var s=S[i];if(aperta(s,g)&&m>=mm(s.da)&&m<mm(s.a)){t
 if(!ok){var best=null;
 for(var k=0;k<3&&!best;k++){var d=(g+k)%7;for(var j=0;j<S.length;j++){var t=S[j];if(!aperta(t,d))continue;var inizio=mm(t.da);if(k===0&&inizio<=m)continue;if(!best||inizio<best.i){best={k:k,i:inizio,da:t.da};}}}
 if(best)txt='Chiuso · riapre '+(best.k===0?'alle ':(best.k===1?'domani alle ':'dopodomani alle '))+best.da;}
-if(txt){el.textContent=(ok?'🟢 ':'🔴 ')+txt;el.style.display='inline-block';}})();</script>
-    <div class="eyebrow" style="color:var(--accl)">Orte · uscita A1</div>
+if(txt){el.textContent=(ok?'🟢 ':'🔴 ')+txt;el.style.display='inline-block';}});</script>
+    <div class="eyebrow" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:2.5px;text-shadow:0 2px 8px rgba(0,0,0,.65);margin-bottom:6px;">Orte · uscita A1</div>
     <h1 class="h2" style="color:#fff;font-size:clamp(31px,8vw,58px);line-height:1.06;margin:8px 0 10px;text-shadow:0 2px 12px rgba(0,0,0,.5);">Il posto giusto dove fermarsi a Orte</h1>
     <p style="font-size:16px;color:rgba(255,255,255,.9);margin-bottom:20px;max-width:34ch;text-shadow:0 1px 6px rgba(0,0,0,.5);">Trattoria dentro l'Hotel Aquila, a un minuto dall'uscita A1 di Orte. Cucina laziale e umbra, pesce scelto la mattina, menu business a pranzo. Parcheggio gratuito.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;">
-      <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="font-size:15px;padding:14px 26px;">🗓 Prenota un tavolo</a>
-      <a class="btn-ghost" href="tel:0761402673">📞 Chiama</a>
+    <div style="display:inline-flex;flex-direction:column;align-items:center;gap:6px;">
+      <div id="rf-aperto" style="display:none;background:rgba(255,255,255,.96);color:#1f2937;font-size:14px;font-weight:700;padding:7px 14px;border-radius:999px;text-align:center;"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+        <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="font-size:15px;padding:14px 26px;margin-top:6px;">🗓 Prenota un tavolo</a>
+        <a class="btn-ghost" href="tel:0761402673" style="margin-top:6px;margin-left:0;">📞 Chiama</a>
+      </div>
     </div>
-    <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:18px;"><span style="border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.88);padding:5px 11px;border-radius:999px;font-size:12.5px;">★ 5,0 su 5 recensioni</span><span style="border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.88);padding:5px 11px;border-radius:999px;font-size:12.5px;">Aperti pranzo e cena</span></div>
+    <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:18px;"><a href="#recensioni" style="border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.16);color:#fff;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:700;">★ 5,0 su 5 recensioni ›</a><span style="border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.88);padding:5px 11px;border-radius:999px;font-size:12.5px;">Aperti pranzo e cena</span></div>
   </div>
 </div>
 <div class="cta-bar">
@@ -547,7 +550,7 @@ if(txt){el.textContent=(ok?'🟢 ':'🔴 ')+txt;el.style.display='inline-block';
 </div>
 
 
-<div class="rev-bg">
+<div class="rev-bg" id="recensioni">
   <div style="max-width:700px;margin:0 auto;">
     <div class="eyebrow">Dicono di noi</div>
     <h2 class="h2" style="margin-bottom:24px;">L'opinione<br><em>dei nostri ospiti</em></h2>
