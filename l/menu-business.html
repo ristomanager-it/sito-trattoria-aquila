@@ -5,7 +5,7 @@
 <meta name="description" content="Facciamo la cucina del Lazio e dell'Umbria senza girarci intorno: bucatini all'amatriciana con guanciale croccante e pecorino, spaghettoni alla carbon">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Trattoria dell'Aquila","url":"https://trattoriadellaquila.it","hasMenu":"https://trattoriadellaquila.it/menu.html","telephone":"0761402673","image":"https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1RiDL4KXBZ6m54IspPpbTSTA0E7zXys9I.jpg","address":{"@type":"PostalAddress","streetAddress":"Via Lazio 4/b","addressLocality":"Orte","addressCountry":"IT"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"12:00","closes":"14:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"19:00","closes":"22:30"}],"acceptsReservations":true}</script>
 <script>(function(){
-var META='',GTM='',GA4='G-TZQVKD4KEV',ADS='',K='rf_consenso';
+var META='',GTM='',GA4='G-TZQVKD4KEV',ADS='AW-16882695231',K='rf_consenso';
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});
 function st(){try{return localStorage.getItem(K);}catch(e){return null;}}
@@ -335,7 +335,7 @@ body{background:#fbf7f0;color:#3b2412}
     </div>
     <div class="lp-sep"><i></i><span>oppure</span><i></i></div>
     <div class="lp-alt">
-      <a class="lp-wa" href="https://wa.me/393759907993?text=Buongiorno%2C%20vorrei%20prenotare%20il%20menu%20business.%20(rif.%20MB25)">WhatsApp</a>
+      <a class="lp-wa" href="https://wa.me/393759907993?text=Buongiorno%2C%20vorrei%20prenotare%20il%20menu%20business%20a%2025%20euro.">WhatsApp</a>
       <a class="lp-ch" href="tel:0761402673">Chiama</a>
     </div>
   </div>
@@ -430,7 +430,9 @@ q('lp-invia').onclick=function(){
 fetch(SB+'/rest/v1/prenotazioni_slot_config?azienda_id=eq.'+AZ+'&select=*',{headers:H}).then(function(r){return r.json();})
   .then(function(a){st.cfg=(a&&a[0])||null;}).catch(function(){st.cfg=null;}).then(function(){renderGiorni();renderTurni();renderOrari();});
 fetch(SB+'/rest/v1/rpc/menu_giorno_pubblico',{method:'POST',headers:H,body:JSON.stringify({p_sede:SEDE})}).then(function(r){return r.json();}).then(function(m){
-  var v=(m&&m.voci)||[];if(!v.length)return;
+  var v=(m&&m.voci)||[];
+  /* se la cucina non ha ancora scritto il menu di oggi (o e' domenica) la sezione resta, con una riga vera, invece di sparire */
+  if(!v.length){q('lp-menu-voci').innerHTML='<div class="lp-pv">Il menu cambia ogni giorno. Intanto sai gia cosa e compreso: antipasto, primo, secondo, acqua e caffè.</div>';q('lp-menu').style.display='block';return;}
   var N={antipasti:'Antipasti',primi:'Primi',secondi:'Secondi',dessert:'Dessert'},h='';
   ['antipasti','primi','secondi','dessert'].forEach(function(k){var l=v.filter(function(x){return x.portata===k;});if(!l.length)return;
     h+='<div class="lp-pt">'+N[k]+'</div>'+l.map(function(x){return '<div class="lp-pv">'+esc(x.nome)+'</div>';}).join('');});
