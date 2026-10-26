@@ -625,7 +625,7 @@ if(txt){el.textContent=(ok?'🟢 ':'🔴 ')+txt;el.style.display='inline-block';
 <footer>
   <div class="ft-logo">Trattoria dell'Aquila</div>
   <div class="ft-links"><a href="index.html">Home</a><a href="chi-siamo.html">Chi siamo</a><a href="menu.html">Menu</a><a href="contatti.html">Contatti</a><a href="https://app.ristoflow-ai.com/#/booking/social">Prenota un tavolo</a></div>
-  <div class="ft-copy">© 2026 Trattoria dell'Aquila</div>
+  <div class="ft-copy">© 2026 Trattoria dell'Aquila · <a href="/privacy.html" style="color:inherit;text-decoration:underline">Privacy e cookie</a></div>
 </footer><script>function filtraMenu(id,btn){document.querySelectorAll('.menu-cat').forEach(el=>el.style.display='none');document.querySelectorAll('.mcat-btn').forEach(b=>b.classList.remove('active'));var el=document.querySelector('.menu-cat[data-cat="'+id+'"]');if(el)el.style.display='';if(btn)btn.classList.add('active')}</script><script>(function(){var u="https://cuhcscpvhypoaplcmtjk.supabase.co"+"/rest/v1/rpc/menu_sito",k="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1aGNzY3B2aHlwb2FwbGNtdGprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjY4MjgsImV4cCI6MjA3OTQwMjgyOH0.q9zAs0oh8F1-whtORHBIORF5jIn1NTS3LvSMWleP0a0";
 function e(t){return String(t==null?"":t).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 fetch(u,{method:"POST",headers:{"apikey":k,"Authorization":"Bearer "+k,"Content-Type":"application/json"},body:JSON.stringify({p_sede:"4a936e52-a1e3-42fc-843c-e8d15dc86040"})})
