@@ -116,6 +116,27 @@ a{text-decoration:none;color:inherit}
 .rev-strip::-webkit-scrollbar{display:none}
 .rev-strip .rev-c{flex:0 0 80%;max-width:340px;scroll-snap-align:start;margin-bottom:0}
 @media(min-width:760px){.rev-strip .rev-c{flex-basis:45%}}
+.intro{max-width:700px;margin:0 auto;padding:30px 22px 6px;text-align:center}
+.intro-t{font-size:17px;line-height:1.65;color:var(--scuro)}
+.intro-o{font-size:13.5px;color:var(--grigio);margin-top:12px}
+#recensioni.rev-bg{padding:40px 20px 34px}
+.rev-sum{font-size:15px;color:var(--scuro);margin:0 0 18px}
+.rev-sum-s{color:#e0a82e;letter-spacing:2px}
+.rev-foto{flex:0 0 72%;max-width:300px;scroll-snap-align:start;background:#fff;border-radius:12px;padding:6px;box-shadow:0 2px 10px rgba(0,0,0,.08);cursor:zoom-in}
+.rev-foto img{width:100%;height:auto;max-height:430px;object-fit:contain;border-radius:8px;display:block}
+.menu-acc-w{max-width:700px;margin:0 auto;padding:20px 16px}
+.menu-acc{background:var(--caldo);border-radius:14px;scroll-margin-top:64px}
+.menu-acc summary{list-style:none;display:flex;align-items:center;gap:10px;padding:18px;cursor:pointer}
+.menu-acc summary::-webkit-details-marker{display:none}
+.ma-t{font-size:19px;font-weight:800;flex:1}
+.ma-s{font-size:12px;color:var(--grigio);font-weight:600}
+.ma-c{font-size:22px;line-height:1;transition:transform .2s}
+.menu-acc[open] .ma-c{transform:rotate(180deg)}
+.ma-b{padding:2px 18px 22px}
+.ma-l{margin-top:16px;font-size:13px}
+.ma-l a{color:var(--acc);font-weight:600}
+.hl-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:24px}
+.hl-grid .hl-card{flex:1 1 200px;max-width:300px}
 .rev-scorri{font-size:12px;color:var(--grigio);margin-top:6px}
 .rev-t{font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;line-height:1.6;margin-bottom:10px}
 .stars{color:var(--acc);letter-spacing:2px;font-size:13px;margin-bottom:6px}
@@ -252,69 +273,47 @@ if(best)txt='Chiuso · riapre '+(best.k===0?'alle ':(best.k===1?'domani alle ':'
 if(txt){el.textContent=(ok?'🟢 ':'🔴 ')+txt;el.style.display='inline-block';}});</script>
     <div class="eyebrow" style="color:#fff;font-size:15px;font-weight:700;letter-spacing:2.5px;text-shadow:0 2px 8px rgba(0,0,0,.65);margin-bottom:6px;">Orte · uscita A1</div>
     <h1 class="h2" style="color:#fff;font-size:clamp(31px,8vw,58px);line-height:1.06;margin:8px 0 10px;text-shadow:0 2px 12px rgba(0,0,0,.5);">Il posto giusto dove fermarsi a Orte</h1>
-    <p style="font-size:16px;color:rgba(255,255,255,.9);margin-bottom:20px;max-width:34ch;text-shadow:0 1px 6px rgba(0,0,0,.5);">Trattoria dentro l'Hotel Aquila, a un minuto dall'uscita A1 di Orte. Cucina laziale e umbra, pesce scelto la mattina, menu business a pranzo. Parcheggio gratuito.</p>
+    
     <div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:min(100%,430px);">
       <div id="rf-aperto" style="display:none;background:rgba(255,255,255,.96);color:#1f2937;font-size:14px;font-weight:700;padding:7px 14px;border-radius:999px;text-align:center;"></div>
       <div style="display:flex;gap:10px;width:100%;">
         <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="flex:1 1 0;text-align:center;font-size:14.5px;padding:15px 8px;margin:6px 0 0;">🗓 Prenota un tavolo</a>
-        <a class="btn" href="tel:0761402673" style="flex:1 1 0;text-align:center;font-size:14.5px;padding:15px 8px;margin:6px 0 0;background:#fff;color:var(--btn);">📞 Chiama</a>
+        
       </div>
-      <a href="https://wa.me/393759907993?text=Buongiorno%2C%20vorrei%20prenotare%20un%20tavolo%20dal%20vostro%20sito." style="display:block;width:100%;box-sizing:border-box;text-align:center;background:#25D366;color:#073b1f;font-weight:800;font-size:14.5px;padding:13px 8px;border-radius:8px;">💬 Scrivici su WhatsApp</a>
+      
     </div>
-    <div style="display:flex;gap:9px;flex-wrap:wrap;margin-top:18px;"><a href="#recensioni" style="border:1px solid rgba(255,255,255,.6);background:rgba(255,255,255,.16);color:#fff;padding:5px 11px;border-radius:999px;font-size:12.5px;font-weight:700;">★ 5,0 su 5 recensioni ›</a><span style="border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.88);padding:5px 11px;border-radius:999px;font-size:12.5px;">Aperti pranzo e cena</span></div>
+    
   </div>
 </div>
 <div class="cta-bar">
   <a class="cta-p" href="https://app.ristoflow-ai.com/#/booking/social">🗓 Prenota</a>
   <a class="cta-c" href="tel:0761402673">📞 Chiama</a>
   <a class="cta-i" href="https://www.google.com/maps/dir//Ristorante+Aquila,+Via+Lazio,+4,+01028+Caldare+VT/@42.454555,12.406016,17z/data=!4m17!1m7!3m6!1s0x132f21b12faf3527:0x7597b42be8f853b9!2sRistorante+Aquila!8m2!3d42.4545511!4d12.4085909!16s%2Fg%2F1ptxqbcp3!4m8!1m0!1m5!1m1!1s0x132f21b12faf3527:0x7597b42be8f853b9!2m2!1d12.4085909!2d42.4545511!3e0?entry=ttu&amp;g_ep=EgoyMDI2MDcxNC4wIKXMDSoASAFQAw%3D%3D">📍 Indicazioni</a>
-  <a class="cta-m" href="menu.html">📋 Menu</a>
+  <a class="cta-m" href="#menu">📋 Menu</a>
 </div>
 
-<section class="section">
-  <div class="hl-grid">
-    <div class="hl-card"><div class="hl-icon">📍</div><div class="hl-t">Aperti pranzo e cena</div><div class="hl-d">Lunedì-sabato 12:00-14:30 e 19:00-22:30. Domenica solo la sera, dalle 19:00 alle 22:30.</div></div>
-    <div class="hl-card"><div class="hl-icon">🍽️</div><div class="hl-t">Un minuto dall'uscita A1</div><div class="hl-d">Via Lazio 4/b, dentro l'Hotel Aquila. Parcheggio gratuito e largo: ci stanno anche furgoni e camper.</div></div>
-    <div class="hl-card"><div class="hl-icon">🐟</div><div class="hl-t">Menu business a 25 euro</div><div class="hl-d">A pranzo. Alla carta i primi vanno da 9 a 16 euro, i secondi da 9,50 a 24. Se avete poco tempo ditelo appena vi sedete.</div></div>
-  </div>
+<section class="intro">
+  <p class="intro-t">Trattoria dentro l'Hotel Aquila, a un minuto dall'uscita A1 di Orte. Cucina laziale e umbra, pesce scelto la mattina, menu business a pranzo. Parcheggio gratuito.</p>
+  <p class="intro-o">🕐 Lunedì-sabato 12:00-14:30 e 19:00-22:30. Domenica solo la sera, dalle 19:00 alle 22:30.</p>
 </section>
 
-<section class="section" id="cucina">
-  <div class="eyebrow">La nostra cucina</div>
-  <h2 class="h2">Terra e mare,<br><em>scelti ogni giorno</em></h2>
-  <div class="body"><p>Facciamo la cucina del Lazio e dell'Umbria senza girarci intorno: bucatini all'amatriciana con guanciale croccante e pecorino, spaghettoni alla carbonara mantecati al momento, tagliatelle alla norcina con salsiccia umbra e tartufo. La pasta è fresca e trafilata al bronzo. Dal mare arriva quello che si trova la mattina: spaghettoni alle vongole, frittura di calamari gamberi e alici, polpo grigliato. Alla griglia carne di un'azienda a pochi chilometri da qui: arrosticini, costata, salsicce e broccoletti.</p><p>I primi stanno tra 9 e 16 euro, i secondi tra 9,50 e 24. A pranzo c'è il menu business a 25 euro. Siamo dentro l'Hotel Aquila, a un minuto dall'uscita A1 di Orte: si esce dal casello, si gira e si è arrivati. Parcheggio gratuito e largo, ci stanno anche furgoni e camper, e sopra ci sono le camere se la giornata è stata lunga. Se avete poco tempo ditelo appena vi sedete: vi portiamo primo e secondo senza farvi aspettare.</p></div>
-  <a class="btn" href="chi-siamo.html">Scopri chi siamo →</a>
-  <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="margin-left:10px;">🗓 Prenota un tavolo</a>
-</section>
-
-<div class="reel-grid" style="max-width:100%;margin:0 auto;">
-  <div class="reel-blocco">
-    <div class="reel-item" onclick="apriVideo('https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1rEqWjcC9Yb3rqeF_1q4MUbTqr_kKwxpR.mp4')"><video src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1rEqWjcC9Yb3rqeF_1q4MUbTqr_kKwxpR.mp4" autoplay muted loop playsinline></video><div class="reel-tocca">Tocca</div></div>
-    <div class="reel-testo"><div class="occhiello">Tradizione · Territorio</div><h3>I primi di terra</h3><p>I primi stanno tra 9 e 16 euro, i secondi tra 9,50 e 24. A pranzo c'è il menu business a 25 euro. Siamo dentro l'Hotel Aquila, a un minuto dall'uscita A1 di Orte: si esce dal casello, si gira e si è arrivati. Parcheggio gratuito e largo, ci stanno anche furgoni e camper, e sopra ci sono le camere se la giornata è stata lunga. Se avete poco tempo ditelo appena vi sedete: vi portiamo primo e secondo senza farvi aspettare.</p></div>
-  </div>
-  <div class="reel-blocco">
-    <div class="reel-item" onclick="apriVideo('https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1ydnSCFzxL6vRZ8gupQUV4qCh-H3EIASa.mp4')"><video src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/b331365f-17db-4dda-aa2f-77a09427fe42/drive/1ydnSCFzxL6vRZ8gupQUV4qCh-H3EIASa.mp4" autoplay muted loop playsinline></video><div class="reel-tocca">Tocca</div></div>
-    <div class="reel-testo"><div class="occhiello">Scelto ogni mattina</div><h3>Il nostro mare</h3><p>Alla Trattoria dell'Aquila, ogni piatto è un viaggio nei sapori del mare, un invito a gustare la freschezza e la tradizione della nostra cucina.</p></div>
+<div class="rev-bg" id="recensioni">
+  <div style="max-width:700px;margin:0 auto;">
+    <div class="eyebrow">Dicono di noi</div>
+    <h2 class="h2" style="margin-bottom:10px;">L'opinione<br><em>dei nostri ospiti</em></h2>
+    <div class="rev-sum"><span class="rev-sum-s">★★★★★</span> <b>5,0</b> su 5 · 5 recensioni</div>
+    <div class="rev-strip"><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Il ristorante eccellente, offre piatti di carne e di pesce, gustosi e abbondanti, a prezzi onesti. Posizione molto comoda, a un minuto dall'uscita dell'autostrada."</div><div style="font-size:12px;color:var(--grigio)"><strong>Manuela M.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Da moltissimi anni fermo sempre in questo ristorante, una garanzia. Anche con la nuova gestione. Hanno un menu divertente ed economico."</div><div style="font-size:12px;color:var(--grigio)"><strong>Tiziano T.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Ci siamo stati una sera, eravamo alloggiati nell'albergo, abbiamo mangiato bene, servizio impeccabile, prezzo corretto. Bravi."</div><div style="font-size:12px;color:var(--grigio)"><strong>Renato D.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Sempre delizioso, ottimo rapporto qualita-prezzo. Ottimo servizio. Ampio parcheggio."</div><div style="font-size:12px;color:var(--grigio)"><strong>Anna P.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Menu pranzo a 20 euro con antipasto, primo, secondo, acqua e caffe, all'entrata dell'autostrada, con ampio parcheggio interno. Tutto buono e in porzioni abbondanti. Personale gentilissimo."</div><div style="font-size:12px;color:var(--grigio)"><strong>Antonino L.</strong></div></div></div>
+    <div class="rev-scorri">Scorri per leggerne altre &rarr;</div>
   </div>
 </div>
 
-<div class="mare-s" id="mare">
-  <div class="mare-i">
-    <div class="eyebrow" style="color:var(--acc)">Il mare</div>
-    <blockquote class="mare-q">Il mare è un maestro che insegna la pazienza e la bellezza della semplicità.</blockquote>
-    <div class="mare-b"><p>Alla Trattoria dell'Aquila, ogni piatto è un viaggio nei sapori del mare, un invito a gustare la freschezza e la tradizione della nostra cucina.</p></div>
-    <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="margin-top:28px;">🗓 Prenota un tavolo</a>
-  </div>
-</div>
-
-<div class="menu-s" id="menu">
-  <div class="menu-i">
-    <div class="eyebrow">Il menu</div>
-    <h2 class="h2" style="margin-bottom:8px;">Cosa portiamo<br><em>in tavola</em></h2>
-    <p style="font-size:13px;color:var(--grigio);margin-bottom:20px;">Anteprima. <a href="menu.html" style="color:var(--acc);font-weight:600;">Vedi menu completo →</a></p>
-    <div data-menu-live>
-    <div class="mcat"><button class="mcat-btn active" onclick="filtraMenu('96c333b0-d4dc-49a6-9cb9-a538b0414d1c',this)">🍽️ Menu del Giorno</button><button class="mcat-btn" onclick="filtraMenu('25ab5dcc-3b09-4d9c-90ec-ce7ebe76faff',this)">Antipasti</button><button class="mcat-btn" onclick="filtraMenu('102664ab-6943-4c77-99dc-ce8d63c9383a',this)">Primi Piatti</button><button class="mcat-btn" onclick="filtraMenu('d618cceb-693a-4fd5-96d5-03a6242b66f1',this)">Secondi piatti</button><button class="mcat-btn" onclick="filtraMenu('b701a463-c3fc-4920-a352-6773c7cffafc',this)">La Griglia</button><button class="mcat-btn" onclick="filtraMenu('bcd6b97d-7957-4684-a4f4-8dc8581501c4',this)">Insalatone e piatti freddi</button><button class="mcat-btn" onclick="filtraMenu('a9fdd814-b5db-4bb7-a4d5-e0a0b6e6118c',this)">Contorni</button><button class="mcat-btn" onclick="filtraMenu('0de780c8-c728-4129-81fe-57fa2caf3866',this)">Dessert</button></div>
-    <div>
+<section class="menu-acc-w">
+  <details class="menu-acc" id="menu">
+    <summary><span class="ma-t">📋 Il menu</span><span class="ma-s">Tocca per aprire</span><span class="ma-c">⌄</span></summary>
+    <div class="ma-b">
+      <div data-menu-live>
+        <div class="mcat"><button class="mcat-btn active" onclick="filtraMenu('96c333b0-d4dc-49a6-9cb9-a538b0414d1c',this)">🍽️ Menu del Giorno</button><button class="mcat-btn" onclick="filtraMenu('25ab5dcc-3b09-4d9c-90ec-ce7ebe76faff',this)">Antipasti</button><button class="mcat-btn" onclick="filtraMenu('102664ab-6943-4c77-99dc-ce8d63c9383a',this)">Primi Piatti</button><button class="mcat-btn" onclick="filtraMenu('d618cceb-693a-4fd5-96d5-03a6242b66f1',this)">Secondi piatti</button><button class="mcat-btn" onclick="filtraMenu('b701a463-c3fc-4920-a352-6773c7cffafc',this)">La Griglia</button><button class="mcat-btn" onclick="filtraMenu('bcd6b97d-7957-4684-a4f4-8dc8581501c4',this)">Insalatone e piatti freddi</button><button class="mcat-btn" onclick="filtraMenu('a9fdd814-b5db-4bb7-a4d5-e0a0b6e6118c',this)">Contorni</button><button class="mcat-btn" onclick="filtraMenu('0de780c8-c728-4129-81fe-57fa2caf3866',this)">Dessert</button></div>
+        <div>
   <div class="menu-cat" data-cat="96c333b0-d4dc-49a6-9cb9-a538b0414d1c" style="">
     
     <div class="mi">
@@ -579,31 +578,17 @@ if(txt){el.textContent=(ok?'🟢 ':'🔴 ')+txt;el.style.display='inline-block';
       <div class="mi-p">€ 4.00</div>
     </div>
   </div></div>
+      </div>
+      <p class="ma-l"><a href="menu.html">Vedi il menu completo →</a></p>
     </div>
-    <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="margin-top:32px;">🗓 Prenota un tavolo</a>
-  </div>
-</div>
-
-<div id="locale">
-  <img class="loc-img" src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/sito/b331365f-17db-4dda-aa2f-77a09427fe42/1792914312576-locale.jpg" alt="Il locale" loading="lazy">
-  <section class="section">
-    <div class="eyebrow">Il locale</div>
-    <h2 class="h2">Un'atmosfera<br><em>unica</em></h2>
-    <div class="body"><p>All'interno dell'Hotel Aquila, a pochi metri dall'uscita A1 di Orte. Parcheggio gratuito, ambiente tranquillo.</p></div>
-    <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social">🗓 Prenota un tavolo</a>
-  </section>
-</div>
+  </details>
+</section>
 
 
-<div class="rev-bg" id="recensioni">
-  <div style="max-width:700px;margin:0 auto;">
-    <div class="eyebrow">Dicono di noi</div>
-    <h2 class="h2" style="margin-bottom:24px;">L'opinione<br><em>dei nostri ospiti</em></h2>
-    <div class="rev-strip"><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Il ristorante eccellente, offre piatti di carne e di pesce, gustosi e abbondanti, a prezzi onesti. Posizione molto comoda, a un minuto dall'uscita dell'autostrada."</div><div style="font-size:12px;color:var(--grigio)"><strong>Manuela M.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Da moltissimi anni fermo sempre in questo ristorante, una garanzia. Anche con la nuova gestione. Hanno un menu divertente ed economico."</div><div style="font-size:12px;color:var(--grigio)"><strong>Tiziano T.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Ci siamo stati una sera, eravamo alloggiati nell'albergo, abbiamo mangiato bene, servizio impeccabile, prezzo corretto. Bravi."</div><div style="font-size:12px;color:var(--grigio)"><strong>Renato D.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Sempre delizioso, ottimo rapporto qualita-prezzo. Ottimo servizio. Ampio parcheggio."</div><div style="font-size:12px;color:var(--grigio)"><strong>Anna P.</strong></div></div><div class="rev-c"><div class="stars">★★★★★</div><div class="rev-t">"Menu pranzo a 20 euro con antipasto, primo, secondo, acqua e caffe, all'entrata dell'autostrada, con ampio parcheggio interno. Tutto buono e in porzioni abbondanti. Personale gentilissimo."</div><div style="font-size:12px;color:var(--grigio)"><strong>Antonino L.</strong></div></div></div>
-    <div class="rev-scorri">Scorri per leggerne altre &rarr;</div>
-    <div style="text-align:center;margin-top:20px;"><a class="btn" href="https://app.ristoflow-ai.com/#/booking/social">🗓 Prenota un tavolo</a></div>
-  </div>
-</div>
+
+
+
+
 
 <div class="map-s" id="contatti">
   <div class="map-i">
@@ -617,11 +602,21 @@ if(txt){el.textContent=(ok?'🟢 ':'🔴 ')+txt;el.style.display='inline-block';
       <div><div class="map-lbl">Email</div><div class="map-v"><a href="mailto:Trattoriadellaquila@gmail.com">Trattoriadellaquila@gmail.com</a></div></div>
     </div>
     <div style="display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;">
-      <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="flex:1;min-width:180px;text-align:center;">🗓 Prenota un tavolo</a>
-      <a href="tel:0761402673" style="flex:1;min-width:180px;display:inline-block;border:1.5px solid rgba(255,255,255,.3);color:#fff;font-weight:600;font-size:14px;padding:13px 20px;border-radius:8px;text-align:center;">📞 Chiama ora</a>
+      <a class="btn" href="https://app.ristoflow-ai.com/#/booking/social" style="flex:1;min-width:150px;text-align:center;margin-top:0;">🗓 Prenota un tavolo</a>
+      <a href="tel:0761402673" style="flex:1;min-width:150px;display:inline-block;border:1.5px solid rgba(255,255,255,.3);color:#fff;font-weight:600;font-size:14px;padding:13px 20px;border-radius:8px;text-align:center;">📞 Chiama ora</a>
+      <a href="https://wa.me/393759907993?text=Buongiorno%2C%20vorrei%20prenotare%20un%20tavolo%20dal%20vostro%20sito." style="flex:1;min-width:150px;display:inline-block;background:#25D366;color:#073b1f;font-weight:800;font-size:14px;padding:13px 20px;border-radius:8px;text-align:center;">💬 WhatsApp</a>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
 <footer>
   <div class="ft-logo">Trattoria dell'Aquila</div>
   <div class="ft-links"><a href="index.html">Home</a><a href="chi-siamo.html">Chi siamo</a><a href="menu.html">Menu</a><a href="contatti.html">Contatti</a><a href="https://app.ristoflow-ai.com/#/booking/social">Prenota un tavolo</a></div>
@@ -633,5 +628,5 @@ fetch(u,{method:"POST",headers:{"apikey":k,"Authorization":"Bearer "+k,"Content-
 var h='<div class="mcat">'+d.cats.map(function(c,i){return'<button class="mcat-btn'+(i?'':' active')+'" data-c="'+e(c.id)+'" onclick="filtraMenu(this.dataset.c,this)">'+e(c.nome)+'</button>'}).join("")+'</div><div>'+
 d.cats.map(function(c,i){return'<div class="menu-cat" data-cat="'+e(c.id)+'" style="'+(i?'display:none':'')+'">'+d.voci.filter(function(v){return v.categoria_id===c.id}).map(function(v){
 return'<div class="mi"><div><div class="mi-n">'+e(v.nome)+'</div>'+(v.descrizione?'<div class="mi-d">'+e(v.descrizione)+'</div>':'')+'</div>'+(Number(v.prezzo)?'<div class="mi-p">€ '+Number(v.prezzo).toFixed(2)+'</div>':'')+'</div>'}).join("")+'</div>'}).join("")+'</div>';
-document.querySelectorAll("[data-menu-live]").forEach(function(x){x.innerHTML=h})}).catch(function(){})})();</script>
+document.querySelectorAll("[data-menu-live]").forEach(function(x){x.innerHTML=h})}).catch(function(){})})();</script><script>(function(){var d=document.getElementById('menu');if(!d)return;document.querySelectorAll('a[href="#menu"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();d.open=true;setTimeout(function(){d.scrollIntoView({behavior:'smooth',block:'start'});},60);});});if(location.hash==='#menu')d.open=true;})();</script>
 </body></html>
