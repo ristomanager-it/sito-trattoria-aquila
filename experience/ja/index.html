@@ -159,6 +159,33 @@ details p{margin:10px 0 0;color:var(--muted)}
 .weeklist{margin-top:24px}
 .contact form{max-width:760px}
 .nojs-hide{display:none}
+/* v2: testo piu' grande, meno spazi vuoti, piu' foto */
+body{font-size:18px;line-height:1.55}
+section{padding:46px 0}
+@media (max-width:640px){section{padding:34px 0}.wrap{padding:0 18px}}
+h2{font-size:clamp(28px,6vw,42px)}
+.lead{font-size:19px}
+.note{font-size:16px}
+p{max-width:68ch}
+.facts dl{margin-top:18px;gap:6px 18px}
+.facts dd{font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card img{width:100%;height:190px;object-fit:cover}
+.card div{padding:14px 16px 16px}
+.card h3{font-size:21px;margin-bottom:4px}
+.card p{margin:0;color:var(--muted);font-size:16.5px}
+.days{display:grid;gap:10px;margin-top:18px}
+.dayc{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.dayc img{width:110px;height:100%;min-height:96px;object-fit:cover}
+.dayc b{display:block;color:var(--wine);font-weight:500;font-size:14px;letter-spacing:.03em;text-transform:uppercase}
+.dayc span{display:block;padding:10px 12px 10px 0;font-size:17px}
+.dayc.big span{font-family:"Bodoni Moda",Georgia,serif;font-size:21px}
+details.more{border:0;padding:0;margin-top:14px}
+details.more summary{font-size:17px;color:var(--wine)}
+details.more summary::after{content:""}
+.trip img{height:170px}
+@media (max-width:640px){.facts dl{grid-template-columns:1fr;gap:2px}.facts dt{margin-top:10px;font-size:15px;text-transform:uppercase;letter-spacing:.03em}}
 
 .kick{font-size:14px;letter-spacing:.04em;opacity:.9;margin-bottom:14px}
 .thread{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;margin-top:30px}
@@ -168,6 +195,21 @@ details p{margin:10px 0 0;color:var(--muted)}
 .dep div{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px}
 .dep b{display:block;font-family:"Bodoni Moda",Georgia,serif;font-weight:400;font-size:20px;color:var(--wine)}
 .inc{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:20px}@media (max-width:720px){.inc{grid-template-columns:1fr}}
+
+body{font-size:18px;line-height:1.55}
+section{padding:46px 0}
+@media (max-width:640px){section{padding:34px 0}.wrap{padding:0 18px}}
+h2{font-size:clamp(28px,6vw,42px)}
+.lead{font-size:19px}.note{font-size:16px}p{max-width:68ch}
+.facts dl{margin-top:18px;gap:6px 18px}.facts dd{font-size:17px}
+@media (max-width:640px){.facts dl{grid-template-columns:1fr;gap:2px}.facts dt{margin-top:10px;font-size:15px;text-transform:uppercase;letter-spacing:.03em}}
+.days{display:grid;gap:10px;margin-top:18px}
+.dayc{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.dayc img{width:110px;height:100%;min-height:96px;object-fit:cover}
+.dayc b{display:block;color:var(--wine);font-weight:500;font-size:13.5px;letter-spacing:.03em}
+.dayc span{display:block;padding:10px 12px 10px 0;font-size:17px}
+.dayc small{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+.strip img{height:220px}
 .wedbox{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
 </style>
 </head>
@@ -188,7 +230,7 @@ details p{margin:10px 0 0;color:var(--muted)}
 <div class="thread"><div><h3>芸術と歴史</h3><p>専属ガイドと巡るローマ、フィレンツェに一泊、断崖の町チヴィタ・ディ・バーニョレージョ、凝灰岩を掘ったワインセラー。</p></div><div><h3>ワイン</h3><p>バルジーノのアンティノリ・ネル・キアンティ・クラッシコでのランチ、コタレッラ家での一日、作る料理に合わせたテイスティング。</p></div><div><h3>イタリアの台所</h3><p>現役シェフによる実践的な料理教室：手打ちパスタ、市場、トスカーナのコース、そして最後はガラディナー。</p></div></div>
 <div class="strip"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="Colosseum, Rome" width="1100" height="692" loading="lazy" decoding="async"><img src="https://trattoriadellaquila.it/weddings/img/civita-di-bagnoregio-day-trip.jpg" alt="Civita di Bagnoregio" width="1100" height="733" loading="lazy" decoding="async"><img src="https://trattoriadellaquila.it/experience/img/florence-duomo-at-night-tour.jpg" alt="Florence at night with the Duomo" width="1280" height="853" loading="lazy" decoding="async"></div></div></section>
 <section><div class="wrap two"><div><h2>26代続くトスカーナのワイン造り。</h2><p class="lead" style="margin-top:14px">キアンティの丘に造られたセラーを訪ね、夜はフィレンツェへ。農園に戻ったら、そのワインに合う料理を作ります。</p></div><img src="https://trattoriadellaquila.it/weddings/img/antinori-winery-bargino-tuscany.jpg" alt="Antinori nel Chianti Classico winery at Bargino" width="1100" height="733" loading="lazy" decoding="async"></div></section>
-<section id="days"><div class="wrap"><h2>ゆったりとした旅</h2><p class="lead" style="margin-top:14px">外出は5日、農園でのんびり過ごす日が4日。朝は料理、午後はプール、夜は毎日みんなで食卓を囲みます。</p><p class="note">9泊・添乗員同行・ローマ空港送迎付き</p><div class="weeklist"><div class="day"><b>1日目</b><p class="what">農園へようこそ<span>ローマ・フィウミチーノ空港でお迎え、チェックイン、ウェルカムディナー。</span></p></div><div class="day"><b>2日目・のんびりの日</b><p class="what">手打ちパスタ<span>午前は料理教室、作ったものでランチ、午後はプールで。</span></p></div><div class="day"><b>3日目</b><p class="what">古代ローマ<span>電車で専属ガイドと：コロッセオ、フォロ・ロマーノ、歴史地区。</span></p></div><div class="day"><b>4日目・のんびりの日</b><p class="what">市場とキッチン<span>地元の市場で買い物、郷土料理を作り、ラツィオのワインを味わいます。</span></p></div><div class="day"><b>5日目</b><p class="what">バチカンとトラステヴェレ<span>ガイド付きでバチカン美術館、午後はトラステヴェレを散策。</span></p></div><div class="day"><b>6日目</b><p class="what">チヴィタとコタレッラ家<span>丘の上の町チヴィタ・ディ・バーニョレージョ、その後ワイナリーでランチ。</span></p></div><div class="day"><b>7日目</b><p class="what">バルジーノからフィレンツェへ<span>アンティノリで見学とランチ、夕暮れのフィレンツェを散策してディナー。市内に一泊。</span></p></div><div class="day"><b>8日目</b><p class="what">フィレンツェ<span>ガイド付きでウフィツィ美術館またはアカデミア美術館、ドゥオーモ、その後農園へ。</span></p></div><div class="day"><b>9日目・のんびりの日</b><p class="what">トスカーナのコース<span>バルジーノのワインに合う料理を作ります。</span></p></div><div class="day"><b>10日目</b><p class="what">ガラディナーとお別れ<span>宴会場でゆっくりと最後のディナー。翌朝、空港へお送りします。</span></p></div></div></div></section>
+<section id="days"><div class="wrap"><h2>ゆったりとした旅</h2><p class="lead" style="margin-top:14px">外出は5日、農園でのんびり過ごす日が4日。朝は料理、午後はプール、夜は毎日みんなで食卓を囲みます。</p><p class="note">9泊・添乗員同行・ローマ空港送迎付き</p><div class="days"><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/campo-antico-wedding-venue-pool-at-dusk.jpg" alt="農園へようこそ" width="800" height="533" loading="lazy" decoding="async"><span><b>1日目</b>農園へようこそ<small>ローマ・フィウミチーノ空港でお迎え、チェックイン、ウェルカムディナー。</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/fresh-pasta-cooking-class-campo-antico.jpg" alt="手打ちパスタ" width="800" height="533" loading="lazy" decoding="async"><span><b>2日目・のんびりの日</b>手打ちパスタ<small>午前は料理教室、作ったものでランチ、午後はプールで。</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="古代ローマ" width="800" height="533" loading="lazy" decoding="async"><span><b>3日目</b>古代ローマ<small>電車で専属ガイドと：コロッセオ、フォロ・ロマーノ、歴史地区。</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/olive-grove-garden-campo-antico.jpg" alt="市場とキッチン" width="800" height="533" loading="lazy" decoding="async"><span><b>4日目・のんびりの日</b>市場とキッチン<small>地元の市場で買い物、郷土料理を作り、ラツィオのワインを味わいます。</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="バチカンとトラステヴェレ" width="800" height="533" loading="lazy" decoding="async"><span><b>5日目</b>バチカンとトラステヴェレ<small>ガイド付きでバチカン美術館、午後はトラステヴェレを散策。</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/civita-di-bagnoregio-day-trip.jpg" alt="チヴィタとコタレッラ家" width="800" height="533" loading="lazy" decoding="async"><span><b>6日目</b>チヴィタとコタレッラ家<small>丘の上の町チヴィタ・ディ・バーニョレージョ、その後ワイナリーでランチ。</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/antinori-winery-bargino-tuscany.jpg" alt="バルジーノからフィレンツェへ" width="800" height="533" loading="lazy" decoding="async"><span><b>7日目</b>バルジーノからフィレンツェへ<small>アンティノリで見学とランチ、夕暮れのフィレンツェを散策してディナー。市内に一泊。</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/experience/img/florence-duomo-at-night-tour.jpg" alt="フィレンツェ" width="800" height="533" loading="lazy" decoding="async"><span><b>8日目</b>フィレンツェ<small>ガイド付きでウフィツィ美術館またはアカデミア美術館、ドゥオーモ、その後農園へ。</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/fresh-pasta-cooking-class-campo-antico.jpg" alt="トスカーナのコース" width="800" height="533" loading="lazy" decoding="async"><span><b>9日目・のんびりの日</b>トスカーナのコース<small>バルジーノのワインに合う料理を作ります。</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/wedding-gazebo-by-the-pool-at-night.jpg" alt="ガラディナーとお別れ" width="800" height="533" loading="lazy" decoding="async"><span><b>10日目</b>ガラディナーとお別れ<small>宴会場でゆっくりと最後のディナー。翌朝、空港へお送りします。</small></span></div></div></div></section>
 <section id="book"><div class="wrap"><h2>2027年の出発日</h2><div class="dep"><div><b>収穫エディション</b>2027年9月2日〜11日</div><div><b>栗エディション</b>2027年10月6日〜15日</div><div><b>新オリーブオイル・エディション</b>2027年11月10日〜19日</div></div>
 <h3 style="margin-top:34px;font-size:26px">料金</h3><div class="tablebox"><table><tbody><tr><td>メインツアー・10日間9泊</td><td class="num">4,900ユーロ</td></tr><tr><td>延長：ナポリとカプリ島セーリング・+4泊</td><td class="num">+ 2,600ユーロ</td></tr><tr><td>延長：ミラノとヴェネツィア・+4泊</td><td class="num">+ 2,900ユーロ</td></tr><tr><td>シングル追加料金</td><td class="num">+ 690ユーロ</td></tr></tbody></table></div>
 <p class="note">料金は2名1室利用時の1名あたり。1名1室：メインツアー+690ユーロ、ミラノとヴェネツィア+390ユーロ。船は2名用キャビンのみ。</p><p class="note">6名以上で催行保証。最少人数に達しない場合、予約金は全額返金いたします。</p>
