@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trattoriadellaquila.it/weddings/sitemap.xml
+Sitemap: https://trattoriadellaquila.it/experience/sitemap.xml
