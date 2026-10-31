@@ -159,6 +159,33 @@ details p{margin:10px 0 0;color:var(--muted)}
 .weeklist{margin-top:24px}
 .contact form{max-width:760px}
 .nojs-hide{display:none}
+/* v2: testo piu' grande, meno spazi vuoti, piu' foto */
+body{font-size:18px;line-height:1.55}
+section{padding:46px 0}
+@media (max-width:640px){section{padding:34px 0}.wrap{padding:0 18px}}
+h2{font-size:clamp(28px,6vw,42px)}
+.lead{font-size:19px}
+.note{font-size:16px}
+p{max-width:68ch}
+.facts dl{margin-top:18px;gap:6px 18px}
+.facts dd{font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card img{width:100%;height:190px;object-fit:cover}
+.card div{padding:14px 16px 16px}
+.card h3{font-size:21px;margin-bottom:4px}
+.card p{margin:0;color:var(--muted);font-size:16.5px}
+.days{display:grid;gap:10px;margin-top:18px}
+.dayc{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.dayc img{width:110px;height:100%;min-height:96px;object-fit:cover}
+.dayc b{display:block;color:var(--wine);font-weight:500;font-size:14px;letter-spacing:.03em;text-transform:uppercase}
+.dayc span{display:block;padding:10px 12px 10px 0;font-size:17px}
+.dayc.big span{font-family:"Bodoni Moda",Georgia,serif;font-size:21px}
+details.more{border:0;padding:0;margin-top:14px}
+details.more summary{font-size:17px;color:var(--wine)}
+details.more summary::after{content:""}
+.trip img{height:170px}
+@media (max-width:640px){.facts dl{grid-template-columns:1fr;gap:2px}.facts dt{margin-top:10px;font-size:15px;text-transform:uppercase;letter-spacing:.03em}}
 
 .kick{font-size:14px;letter-spacing:.04em;opacity:.9;margin-bottom:14px}
 .thread{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;margin-top:30px}
@@ -168,6 +195,21 @@ details p{margin:10px 0 0;color:var(--muted)}
 .dep div{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px}
 .dep b{display:block;font-family:"Bodoni Moda",Georgia,serif;font-weight:400;font-size:20px;color:var(--wine)}
 .inc{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:20px}@media (max-width:720px){.inc{grid-template-columns:1fr}}
+
+body{font-size:18px;line-height:1.55}
+section{padding:46px 0}
+@media (max-width:640px){section{padding:34px 0}.wrap{padding:0 18px}}
+h2{font-size:clamp(28px,6vw,42px)}
+.lead{font-size:19px}.note{font-size:16px}p{max-width:68ch}
+.facts dl{margin-top:18px;gap:6px 18px}.facts dd{font-size:17px}
+@media (max-width:640px){.facts dl{grid-template-columns:1fr;gap:2px}.facts dt{margin-top:10px;font-size:15px;text-transform:uppercase;letter-spacing:.03em}}
+.days{display:grid;gap:10px;margin-top:18px}
+.dayc{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.dayc img{width:110px;height:100%;min-height:96px;object-fit:cover}
+.dayc b{display:block;color:var(--wine);font-weight:500;font-size:13.5px;letter-spacing:.03em}
+.dayc span{display:block;padding:10px 12px 10px 0;font-size:17px}
+.dayc small{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+.strip img{height:220px}
 .wedbox{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
 </style>
 </head>
@@ -188,7 +230,7 @@ details p{margin:10px 0 0;color:var(--muted)}
 <div class="thread"><div><h3>Arte e historia</h3><p>Roma con guía privado, Florencia con una noche en la ciudad, Civita di Bagnoregio sobre su roca, bodegas excavadas en la toba.</p></div><div><h3>Vino</h3><p>Almuerzo en Antinori nel Chianti Classico, en Bargino, un día con la familia Cotarella y catas elegidas para acompañar lo que cocináis.</p></div><div><h3>La cocina italiana</h3><p>Clases prácticas con un chef de verdad: pasta fresca, el mercado, un menú toscano y una cena de gala para terminar.</p></div></div>
 <div class="strip"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="Colosseum, Rome" width="1100" height="692" loading="lazy" decoding="async"><img src="https://trattoriadellaquila.it/weddings/img/civita-di-bagnoregio-day-trip.jpg" alt="Civita di Bagnoregio" width="1100" height="733" loading="lazy" decoding="async"><img src="https://trattoriadellaquila.it/experience/img/florence-duomo-at-night-tour.jpg" alt="Florence at night with the Duomo" width="1280" height="853" loading="lazy" decoding="async"></div></div></section>
 <section><div class="wrap two"><div><h2>Veintiséis generaciones de vino toscano.</h2><p class="lead" style="margin-top:14px">Una bodega construida dentro de las colinas del Chianti. Después, Florencia de noche, y de vuelta a la finca para cocinar los platos que acompañan esos vinos.</p></div><img src="https://trattoriadellaquila.it/weddings/img/antinori-winery-bargino-tuscany.jpg" alt="Antinori nel Chianti Classico winery at Bargino" width="1100" height="733" loading="lazy" decoding="async"></div></section>
-<section id="days"><div class="wrap"><h2>Sin prisas</h2><p class="lead" style="margin-top:14px">Cinco días fuera, cuatro días tranquilos en la finca. Se cocina por la mañana, piscina por la tarde y cena juntos cada noche.</p><p class="note">9 noches · acompañante y traslados desde Roma incluidos</p><div class="weeklist"><div class="day"><b>DÍA 1</b><p class="what">Bienvenidos a la finca<span>Recogida en Roma Fiumicino, instalación y cena de bienvenida.</span></p></div><div class="day"><b>DÍA 2 · DÍA TRANQUILO</b><p class="what">Pasta fresca<span>Clase por la mañana, almuerzo con lo que habéis preparado, tarde en la piscina.</span></p></div><div class="day"><b>DÍA 3</b><p class="what">La Roma antigua<span>En tren con guía privado: Coliseo, Foros y centro histórico.</span></p></div><div class="day"><b>DÍA 4 · DÍA TRANQUILO</b><p class="what">Mercado y cocina<span>Compra en un mercado local, un menú de la tradición y vinos del Lacio.</span></p></div><div class="day"><b>DÍA 5</b><p class="what">Vaticano y Trastevere<span>Museos Vaticanos con guía y una tarde en el Trastevere.</span></p></div><div class="day"><b>DÍA 6</b><p class="what">Civita y la familia Cotarella<span>El pueblo de Civita di Bagnoregio y almuerzo en la bodega.</span></p></div><div class="day"><b>DÍA 7</b><p class="what">Bargino y Florencia<span>Visita y almuerzo en Antinori, paseo al atardecer y cena en Florencia. Noche en la ciudad.</span></p></div><div class="day"><b>DÍA 8</b><p class="what">Florencia<span>Uffizi o Accademia con guía, el Duomo y regreso a la finca.</span></p></div><div class="day"><b>DÍA 9 · DÍA TRANQUILO</b><p class="what">Un menú toscano<span>Cocinamos los platos que acompañan los vinos de Bargino.</span></p></div><div class="day"><b>DÍA 10</b><p class="what">Cena de gala y despedida<span>Una última cena larga en nuestro salón. Traslado al aeropuerto a la mañana siguiente.</span></p></div></div></div></section>
+<section id="days"><div class="wrap"><h2>Sin prisas</h2><p class="lead" style="margin-top:14px">Cinco días fuera, cuatro días tranquilos en la finca. Se cocina por la mañana, piscina por la tarde y cena juntos cada noche.</p><p class="note">9 noches · acompañante y traslados desde Roma incluidos</p><div class="days"><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/campo-antico-wedding-venue-pool-at-dusk.jpg" alt="Bienvenidos a la finca" width="800" height="533" loading="lazy" decoding="async"><span><b>DÍA 1</b>Bienvenidos a la finca<small>Recogida en Roma Fiumicino, instalación y cena de bienvenida.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/fresh-pasta-cooking-class-campo-antico.jpg" alt="Pasta fresca" width="800" height="533" loading="lazy" decoding="async"><span><b>DÍA 2 · DÍA TRANQUILO</b>Pasta fresca<small>Clase por la mañana, almuerzo con lo que habéis preparado, tarde en la piscina.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="La Roma antigua" width="800" height="533" loading="lazy" decoding="async"><span><b>DÍA 3</b>La Roma antigua<small>En tren con guía privado: Coliseo, Foros y centro histórico.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/olive-grove-garden-campo-antico.jpg" alt="Mercado y cocina" width="800" height="533" loading="lazy" decoding="async"><span><b>DÍA 4 · DÍA TRANQUILO</b>Mercado y cocina<small>Compra en un mercado local, un menú de la tradición y vinos del Lacio.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="Vaticano y Trastevere" width="800" height="533" loading="lazy" decoding="async"><span><b>DÍA 5</b>Vaticano y Trastevere<small>Museos Vaticanos con guía y una tarde en el Trastevere.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/civita-di-bagnoregio-day-trip.jpg" alt="Civita y la familia Cotarella" width="800" height="533" loading="lazy" decoding="async"><span><b>DÍA 6</b>Civita y la familia Cotarella<small>El pueblo de Civita di Bagnoregio y almuerzo en la bodega.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/antinori-winery-bargino-tuscany.jpg" alt="Bargino y Florencia" width="800" height="533" loading="lazy" decoding="async"><span><b>DÍA 7</b>Bargino y Florencia<small>Visita y almuerzo en Antinori, paseo al atardecer y cena en Florencia. Noche en la ciudad.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/experience/img/florence-duomo-at-night-tour.jpg" alt="Florencia" width="800" height="533" loading="lazy" decoding="async"><span><b>DÍA 8</b>Florencia<small>Uffizi o Accademia con guía, el Duomo y regreso a la finca.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/fresh-pasta-cooking-class-campo-antico.jpg" alt="Un menú toscano" width="800" height="533" loading="lazy" decoding="async"><span><b>DÍA 9 · DÍA TRANQUILO</b>Un menú toscano<small>Cocinamos los platos que acompañan los vinos de Bargino.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/wedding-gazebo-by-the-pool-at-night.jpg" alt="Cena de gala y despedida" width="800" height="533" loading="lazy" decoding="async"><span><b>DÍA 10</b>Cena de gala y despedida<small>Una última cena larga en nuestro salón. Traslado al aeropuerto a la mañana siguiente.</small></span></div></div></div></section>
 <section id="book"><div class="wrap"><h2>Salidas 2027</h2><div class="dep"><div><b>Edición Vendimia</b>2–11 de septiembre de 2027</div><div><b>Edición Castañas</b>6–15 de octubre de 2027</div><div><b>Edición Aceite nuevo</b>10–19 de noviembre de 2027</div></div>
 <h3 style="margin-top:34px;font-size:26px">Precios</h3><div class="tablebox"><table><tbody><tr><td>Tour principal · 10 días, 9 noches</td><td class="num">4.900 €</td></tr><tr><td>Extensión: Nápoles y Capri en velero · +4 noches</td><td class="num">+ 2.600 €</td></tr><tr><td>Extensión: Milán y Venecia · +4 noches</td><td class="num">+ 2.900 €</td></tr><tr><td>Suplemento individual</td><td class="num">+ 690 €</td></tr></tbody></table></div>
 <p class="note">Precios por persona en habitación doble. Individual: +690 € en el tour, +390 € en Milán y Venecia. En el barco solo camarotes dobles.</p><p class="note">Salida garantizada con al menos 6 viajeros. Si no se alcanza el mínimo, se devuelve el anticipo íntegro.</p>
