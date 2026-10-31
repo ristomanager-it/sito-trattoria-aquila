@@ -159,6 +159,33 @@ details p{margin:10px 0 0;color:var(--muted)}
 .weeklist{margin-top:24px}
 .contact form{max-width:760px}
 .nojs-hide{display:none}
+/* v2: testo piu' grande, meno spazi vuoti, piu' foto */
+body{font-size:18px;line-height:1.55}
+section{padding:46px 0}
+@media (max-width:640px){section{padding:34px 0}.wrap{padding:0 18px}}
+h2{font-size:clamp(28px,6vw,42px)}
+.lead{font-size:19px}
+.note{font-size:16px}
+p{max-width:68ch}
+.facts dl{margin-top:18px;gap:6px 18px}
+.facts dd{font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card img{width:100%;height:190px;object-fit:cover}
+.card div{padding:14px 16px 16px}
+.card h3{font-size:21px;margin-bottom:4px}
+.card p{margin:0;color:var(--muted);font-size:16.5px}
+.days{display:grid;gap:10px;margin-top:18px}
+.dayc{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.dayc img{width:110px;height:100%;min-height:96px;object-fit:cover}
+.dayc b{display:block;color:var(--wine);font-weight:500;font-size:14px;letter-spacing:.03em;text-transform:uppercase}
+.dayc span{display:block;padding:10px 12px 10px 0;font-size:17px}
+.dayc.big span{font-family:"Bodoni Moda",Georgia,serif;font-size:21px}
+details.more{border:0;padding:0;margin-top:14px}
+details.more summary{font-size:17px;color:var(--wine)}
+details.more summary::after{content:""}
+.trip img{height:170px}
+@media (max-width:640px){.facts dl{grid-template-columns:1fr;gap:2px}.facts dt{margin-top:10px;font-size:15px;text-transform:uppercase;letter-spacing:.03em}}
 
 .kick{font-size:14px;letter-spacing:.04em;opacity:.9;margin-bottom:14px}
 .thread{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;margin-top:30px}
@@ -168,6 +195,21 @@ details p{margin:10px 0 0;color:var(--muted)}
 .dep div{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px}
 .dep b{display:block;font-family:"Bodoni Moda",Georgia,serif;font-weight:400;font-size:20px;color:var(--wine)}
 .inc{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:20px}@media (max-width:720px){.inc{grid-template-columns:1fr}}
+
+body{font-size:18px;line-height:1.55}
+section{padding:46px 0}
+@media (max-width:640px){section{padding:34px 0}.wrap{padding:0 18px}}
+h2{font-size:clamp(28px,6vw,42px)}
+.lead{font-size:19px}.note{font-size:16px}p{max-width:68ch}
+.facts dl{margin-top:18px;gap:6px 18px}.facts dd{font-size:17px}
+@media (max-width:640px){.facts dl{grid-template-columns:1fr;gap:2px}.facts dt{margin-top:10px;font-size:15px;text-transform:uppercase;letter-spacing:.03em}}
+.days{display:grid;gap:10px;margin-top:18px}
+.dayc{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.dayc img{width:110px;height:100%;min-height:96px;object-fit:cover}
+.dayc b{display:block;color:var(--wine);font-weight:500;font-size:13.5px;letter-spacing:.03em}
+.dayc span{display:block;padding:10px 12px 10px 0;font-size:17px}
+.dayc small{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+.strip img{height:220px}
 .wedbox{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
 </style>
 </head>
@@ -188,7 +230,7 @@ details p{margin:10px 0 0;color:var(--muted)}
 <div class="thread"><div><h3>Kunst &amp; geschiedenis</h3><p>Rome met een privégids, Florence met overnachting, Civita di Bagnoregio op zijn rots, wijnkelders uitgehouwen in tufsteen.</p></div><div><h3>Wijn</h3><p>Lunch bij Antinori nel Chianti Classico in Bargino, een dag bij de familie Cotarella, proeverijen die passen bij wat je kookt.</p></div><div><h3>De Italiaanse keuken</h3><p>Kooklessen met een echte chef: verse pasta, de markt, een Toscaans menu en een galadiner als afsluiting.</p></div></div>
 <div class="strip"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="Colosseum, Rome" width="1100" height="692" loading="lazy" decoding="async"><img src="https://trattoriadellaquila.it/weddings/img/civita-di-bagnoregio-day-trip.jpg" alt="Civita di Bagnoregio" width="1100" height="733" loading="lazy" decoding="async"><img src="https://trattoriadellaquila.it/experience/img/florence-duomo-at-night-tour.jpg" alt="Florence at night with the Duomo" width="1280" height="853" loading="lazy" decoding="async"></div></div></section>
 <section><div class="wrap two"><div><h2>Zesentwintig generaties Toscaanse wijnbouw.</h2><p class="lead" style="margin-top:14px">Een kelder gebouwd in de heuvels van Chianti. Daarna Florence bij avond, en terug op de boerderij kook je de gerechten die bij die wijnen horen.</p></div><img src="https://trattoriadellaquila.it/weddings/img/antinori-winery-bargino-tuscany.jpg" alt="Antinori nel Chianti Classico winery at Bargino" width="1100" height="733" loading="lazy" decoding="async"></div></section>
-<section id="days"><div class="wrap"><h2>Nooit gehaast</h2><p class="lead" style="margin-top:14px">Vijf dagen op pad, vier rustige dagen op de boerderij. &#x27;s Ochtends koken, &#x27;s middags zwemmen, elke avond samen eten.</p><p class="note">9 nachten · reisleider en luchthaventransfers vanaf Rome inbegrepen</p><div class="weeklist"><div class="day"><b>DAG 1</b><p class="what">Welkom op de boerderij<span>Ophalen op Rome Fiumicino, aankomen, welkomstdiner.</span></p></div><div class="day"><b>DAG 2 · RUSTDAG</b><p class="what">Verse pasta<span>Kookles in de ochtend, lunch met wat je zelf maakte, middag aan het zwembad.</span></p></div><div class="day"><b>DAG 3</b><p class="what">Het antieke Rome<span>Met de trein en een privégids: Colosseum, Forum, het historische centrum.</span></p></div><div class="day"><b>DAG 4 · RUSTDAG</b><p class="what">Markt &amp; keuken<span>Inkopen op een lokale markt, een streekmenu koken, wijnen uit Lazio proeven.</span></p></div><div class="day"><b>DAG 5</b><p class="what">Vaticaan &amp; Trastevere<span>De Vaticaanse Musea met een gids, daarna een middag in Trastevere.</span></p></div><div class="day"><b>DAG 6</b><p class="what">Civita &amp; de familie Cotarella<span>Het bergdorp Civita di Bagnoregio, daarna lunch op het wijnhuis.</span></p></div><div class="day"><b>DAG 7</b><p class="what">Bargino, dan Florence<span>Bezoek en lunch bij Antinori, wandeling bij zonsondergang en diner in Florence. Overnachting in de stad.</span></p></div><div class="day"><b>DAG 8</b><p class="what">Florence<span>Uffizi of Accademia met een gids, de Dom, terug naar de boerderij.</span></p></div><div class="day"><b>DAG 9 · RUSTDAG</b><p class="what">Een Toscaans menu<span>Kook de gerechten die passen bij de wijnen van Bargino.</span></p></div><div class="day"><b>DAG 10</b><p class="what">Galadiner &amp; afscheid<span>Een lang laatste diner in onze feestzaal. De volgende ochtend transfer naar de luchthaven.</span></p></div></div></div></section>
+<section id="days"><div class="wrap"><h2>Nooit gehaast</h2><p class="lead" style="margin-top:14px">Vijf dagen op pad, vier rustige dagen op de boerderij. &#x27;s Ochtends koken, &#x27;s middags zwemmen, elke avond samen eten.</p><p class="note">9 nachten · reisleider en luchthaventransfers vanaf Rome inbegrepen</p><div class="days"><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/campo-antico-wedding-venue-pool-at-dusk.jpg" alt="Welkom op de boerderij" width="800" height="533" loading="lazy" decoding="async"><span><b>DAG 1</b>Welkom op de boerderij<small>Ophalen op Rome Fiumicino, aankomen, welkomstdiner.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/fresh-pasta-cooking-class-campo-antico.jpg" alt="Verse pasta" width="800" height="533" loading="lazy" decoding="async"><span><b>DAG 2 · RUSTDAG</b>Verse pasta<small>Kookles in de ochtend, lunch met wat je zelf maakte, middag aan het zwembad.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="Het antieke Rome" width="800" height="533" loading="lazy" decoding="async"><span><b>DAG 3</b>Het antieke Rome<small>Met de trein en een privégids: Colosseum, Forum, het historische centrum.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/olive-grove-garden-campo-antico.jpg" alt="Markt &amp; keuken" width="800" height="533" loading="lazy" decoding="async"><span><b>DAG 4 · RUSTDAG</b>Markt &amp; keuken<small>Inkopen op een lokale markt, een streekmenu koken, wijnen uit Lazio proeven.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="Vaticaan &amp; Trastevere" width="800" height="533" loading="lazy" decoding="async"><span><b>DAG 5</b>Vaticaan &amp; Trastevere<small>De Vaticaanse Musea met een gids, daarna een middag in Trastevere.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/civita-di-bagnoregio-day-trip.jpg" alt="Civita &amp; de familie Cotarella" width="800" height="533" loading="lazy" decoding="async"><span><b>DAG 6</b>Civita &amp; de familie Cotarella<small>Het bergdorp Civita di Bagnoregio, daarna lunch op het wijnhuis.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/antinori-winery-bargino-tuscany.jpg" alt="Bargino, dan Florence" width="800" height="533" loading="lazy" decoding="async"><span><b>DAG 7</b>Bargino, dan Florence<small>Bezoek en lunch bij Antinori, wandeling bij zonsondergang en diner in Florence. Overnachting in de stad.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/experience/img/florence-duomo-at-night-tour.jpg" alt="Florence" width="800" height="533" loading="lazy" decoding="async"><span><b>DAG 8</b>Florence<small>Uffizi of Accademia met een gids, de Dom, terug naar de boerderij.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/fresh-pasta-cooking-class-campo-antico.jpg" alt="Een Toscaans menu" width="800" height="533" loading="lazy" decoding="async"><span><b>DAG 9 · RUSTDAG</b>Een Toscaans menu<small>Kook de gerechten die passen bij de wijnen van Bargino.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/wedding-gazebo-by-the-pool-at-night.jpg" alt="Galadiner &amp; afscheid" width="800" height="533" loading="lazy" decoding="async"><span><b>DAG 10</b>Galadiner &amp; afscheid<small>Een lang laatste diner in onze feestzaal. De volgende ochtend transfer naar de luchthaven.</small></span></div></div></div></section>
 <section id="book"><div class="wrap"><h2>Vertrekdata 2027</h2><div class="dep"><div><b>Oogsteditie</b>2–11 september 2027</div><div><b>Kastanje-editie</b>6–15 oktober 2027</div><div><b>Olijfolie-editie</b>10–19 november 2027</div></div>
 <h3 style="margin-top:34px;font-size:26px">Prijzen</h3><div class="tablebox"><table><tbody><tr><td>Hoofdreis · 10 dagen, 9 nachten</td><td class="num">€4.900</td></tr><tr><td>Verlenging: Napels &amp; Capri per zeilboot · +4 nachten</td><td class="num">+ €2.600</td></tr><tr><td>Verlenging: Milaan &amp; Venetië · +4 nachten</td><td class="num">+ €2.900</td></tr><tr><td>Toeslag eenpersoonskamer</td><td class="num">+ €690</td></tr></tbody></table></div>
 <p class="note">Prijzen per persoon op basis van een tweepersoonskamer. Eenpersoonskamer: +€ 690 op de hoofdreis, +€ 390 voor Milaan &amp; Venetië. Op de boot alleen tweepersoonshutten.</p><p class="note">Vertrek gegarandeerd vanaf 6 gasten. Wordt het minimum niet gehaald, dan krijg je je aanbetaling volledig terug.</p>
