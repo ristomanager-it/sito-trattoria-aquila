@@ -159,6 +159,33 @@ details p{margin:10px 0 0;color:var(--muted)}
 .weeklist{margin-top:24px}
 .contact form{max-width:760px}
 .nojs-hide{display:none}
+/* v2: testo piu' grande, meno spazi vuoti, piu' foto */
+body{font-size:18px;line-height:1.55}
+section{padding:46px 0}
+@media (max-width:640px){section{padding:34px 0}.wrap{padding:0 18px}}
+h2{font-size:clamp(28px,6vw,42px)}
+.lead{font-size:19px}
+.note{font-size:16px}
+p{max-width:68ch}
+.facts dl{margin-top:18px;gap:6px 18px}
+.facts dd{font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-top:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card img{width:100%;height:190px;object-fit:cover}
+.card div{padding:14px 16px 16px}
+.card h3{font-size:21px;margin-bottom:4px}
+.card p{margin:0;color:var(--muted);font-size:16.5px}
+.days{display:grid;gap:10px;margin-top:18px}
+.dayc{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.dayc img{width:110px;height:100%;min-height:96px;object-fit:cover}
+.dayc b{display:block;color:var(--wine);font-weight:500;font-size:14px;letter-spacing:.03em;text-transform:uppercase}
+.dayc span{display:block;padding:10px 12px 10px 0;font-size:17px}
+.dayc.big span{font-family:"Bodoni Moda",Georgia,serif;font-size:21px}
+details.more{border:0;padding:0;margin-top:14px}
+details.more summary{font-size:17px;color:var(--wine)}
+details.more summary::after{content:""}
+.trip img{height:170px}
+@media (max-width:640px){.facts dl{grid-template-columns:1fr;gap:2px}.facts dt{margin-top:10px;font-size:15px;text-transform:uppercase;letter-spacing:.03em}}
 
 .kick{font-size:14px;letter-spacing:.04em;opacity:.9;margin-bottom:14px}
 .thread{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px;margin-top:30px}
@@ -168,6 +195,21 @@ details p{margin:10px 0 0;color:var(--muted)}
 .dep div{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px}
 .dep b{display:block;font-family:"Bodoni Moda",Georgia,serif;font-weight:400;font-size:20px;color:var(--wine)}
 .inc{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:20px}@media (max-width:720px){.inc{grid-template-columns:1fr}}
+
+body{font-size:18px;line-height:1.55}
+section{padding:46px 0}
+@media (max-width:640px){section{padding:34px 0}.wrap{padding:0 18px}}
+h2{font-size:clamp(28px,6vw,42px)}
+.lead{font-size:19px}.note{font-size:16px}p{max-width:68ch}
+.facts dl{margin-top:18px;gap:6px 18px}.facts dd{font-size:17px}
+@media (max-width:640px){.facts dl{grid-template-columns:1fr;gap:2px}.facts dt{margin-top:10px;font-size:15px;text-transform:uppercase;letter-spacing:.03em}}
+.days{display:grid;gap:10px;margin-top:18px}
+.dayc{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.dayc img{width:110px;height:100%;min-height:96px;object-fit:cover}
+.dayc b{display:block;color:var(--wine);font-weight:500;font-size:13.5px;letter-spacing:.03em}
+.dayc span{display:block;padding:10px 12px 10px 0;font-size:17px}
+.dayc small{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+.strip img{height:220px}
 .wedbox{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
 </style>
 </head>
@@ -188,7 +230,7 @@ details p{margin:10px 0 0;color:var(--muted)}
 <div class="thread"><div><h3>Искусство и история</h3><p>Рим с личным гидом, Флоренция с ночёвкой, Чивита-ди-Баньореджо на скале, винные погреба в туфе.</p></div><div><h3>Вино</h3><p>Обед в Antinori nel Chianti Classico в Баржино, день с семьёй Котарелла и дегустации под блюда, которые вы готовите.</p></div><div><h3>Итальянская кухня</h3><p>Практические занятия с настоящим шефом: свежая паста, рынок, тосканское меню и гала-ужин в финале.</p></div></div>
 <div class="strip"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="Colosseum, Rome" width="1100" height="692" loading="lazy" decoding="async"><img src="https://trattoriadellaquila.it/weddings/img/civita-di-bagnoregio-day-trip.jpg" alt="Civita di Bagnoregio" width="1100" height="733" loading="lazy" decoding="async"><img src="https://trattoriadellaquila.it/experience/img/florence-duomo-at-night-tour.jpg" alt="Florence at night with the Duomo" width="1280" height="853" loading="lazy" decoding="async"></div></div></section>
 <section><div class="wrap two"><div><h2>Двадцать шесть поколений тосканского вина.</h2><p class="lead" style="margin-top:14px">Погреб, встроенный в холмы Кьянти. Затем вечерняя Флоренция и возвращение в усадьбу, чтобы приготовить блюда к этим винам.</p></div><img src="https://trattoriadellaquila.it/weddings/img/antinori-winery-bargino-tuscany.jpg" alt="Antinori nel Chianti Classico winery at Bargino" width="1100" height="733" loading="lazy" decoding="async"></div></section>
-<section id="days"><div class="wrap"><h2>Без спешки</h2><p class="lead" style="margin-top:14px">Пять дней в поездках, четыре спокойных дня в усадьбе. Утром готовим, днём бассейн, вечером ужин вместе.</p><p class="note">9 ночей · сопровождающий и трансферы из Рима включены</p><div class="weeklist"><div class="day"><b>ДЕНЬ 1</b><p class="what">Добро пожаловать в усадьбу<span>Встреча в аэропорту Рим-Фьюмичино, заселение, приветственный ужин.</span></p></div><div class="day"><b>ДЕНЬ 2 · СПОКОЙНЫЙ ДЕНЬ</b><p class="what">Свежая паста<span>Утром мастер-класс, обед из того, что приготовили, днём бассейн.</span></p></div><div class="day"><b>ДЕНЬ 3</b><p class="what">Древний Рим<span>На поезде с личным гидом: Колизей, Форумы, исторический центр.</span></p></div><div class="day"><b>ДЕНЬ 4 · СПОКОЙНЫЙ ДЕНЬ</b><p class="what">Рынок и кухня<span>Покупки на местном рынке, традиционное меню, вина Лацио.</span></p></div><div class="day"><b>ДЕНЬ 5</b><p class="what">Ватикан и Трастевере<span>Музеи Ватикана с гидом, затем вечер в Трастевере.</span></p></div><div class="day"><b>ДЕНЬ 6</b><p class="what">Чивита и семья Котарелла<span>Городок Чивита-ди-Баньореджо, затем обед на винодельне.</span></p></div><div class="day"><b>ДЕНЬ 7</b><p class="what">Баржино и Флоренция<span>Визит и обед в Antinori, прогулка на закате и ужин во Флоренции. Ночь в городе.</span></p></div><div class="day"><b>ДЕНЬ 8</b><p class="what">Флоренция<span>Уффици или Академия с гидом, Дуомо, возвращение в усадьбу.</span></p></div><div class="day"><b>ДЕНЬ 9 · СПОКОЙНЫЙ ДЕНЬ</b><p class="what">Тосканское меню<span>Готовим блюда к винам Баржино.</span></p></div><div class="day"><b>ДЕНЬ 10</b><p class="what">Гала-ужин и прощание<span>Последний долгий ужин в нашем банкетном зале. Утром трансфер в аэропорт.</span></p></div></div></div></section>
+<section id="days"><div class="wrap"><h2>Без спешки</h2><p class="lead" style="margin-top:14px">Пять дней в поездках, четыре спокойных дня в усадьбе. Утром готовим, днём бассейн, вечером ужин вместе.</p><p class="note">9 ночей · сопровождающий и трансферы из Рима включены</p><div class="days"><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/campo-antico-wedding-venue-pool-at-dusk.jpg" alt="Добро пожаловать в усадьбу" width="800" height="533" loading="lazy" decoding="async"><span><b>ДЕНЬ 1</b>Добро пожаловать в усадьбу<small>Встреча в аэропорту Рим-Фьюмичино, заселение, приветственный ужин.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/fresh-pasta-cooking-class-campo-antico.jpg" alt="Свежая паста" width="800" height="533" loading="lazy" decoding="async"><span><b>ДЕНЬ 2 · СПОКОЙНЫЙ ДЕНЬ</b>Свежая паста<small>Утром мастер-класс, обед из того, что приготовили, днём бассейн.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="Древний Рим" width="800" height="533" loading="lazy" decoding="async"><span><b>ДЕНЬ 3</b>Древний Рим<small>На поезде с личным гидом: Колизей, Форумы, исторический центр.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/olive-grove-garden-campo-antico.jpg" alt="Рынок и кухня" width="800" height="533" loading="lazy" decoding="async"><span><b>ДЕНЬ 4 · СПОКОЙНЫЙ ДЕНЬ</b>Рынок и кухня<small>Покупки на местном рынке, традиционное меню, вина Лацио.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/colosseum-rome-day-trip.jpg" alt="Ватикан и Трастевере" width="800" height="533" loading="lazy" decoding="async"><span><b>ДЕНЬ 5</b>Ватикан и Трастевере<small>Музеи Ватикана с гидом, затем вечер в Трастевере.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/civita-di-bagnoregio-day-trip.jpg" alt="Чивита и семья Котарелла" width="800" height="533" loading="lazy" decoding="async"><span><b>ДЕНЬ 6</b>Чивита и семья Котарелла<small>Городок Чивита-ди-Баньореджо, затем обед на винодельне.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/antinori-winery-bargino-tuscany.jpg" alt="Баржино и Флоренция" width="800" height="533" loading="lazy" decoding="async"><span><b>ДЕНЬ 7</b>Баржино и Флоренция<small>Визит и обед в Antinori, прогулка на закате и ужин во Флоренции. Ночь в городе.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/experience/img/florence-duomo-at-night-tour.jpg" alt="Флоренция" width="800" height="533" loading="lazy" decoding="async"><span><b>ДЕНЬ 8</b>Флоренция<small>Уффици или Академия с гидом, Дуомо, возвращение в усадьбу.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/fresh-pasta-cooking-class-campo-antico.jpg" alt="Тосканское меню" width="800" height="533" loading="lazy" decoding="async"><span><b>ДЕНЬ 9 · СПОКОЙНЫЙ ДЕНЬ</b>Тосканское меню<small>Готовим блюда к винам Баржино.</small></span></div><div class="dayc"><img src="https://trattoriadellaquila.it/weddings/img/wedding-gazebo-by-the-pool-at-night.jpg" alt="Гала-ужин и прощание" width="800" height="533" loading="lazy" decoding="async"><span><b>ДЕНЬ 10</b>Гала-ужин и прощание<small>Последний долгий ужин в нашем банкетном зале. Утром трансфер в аэропорт.</small></span></div></div></div></section>
 <section id="book"><div class="wrap"><h2>Даты 2027</h2><div class="dep"><div><b>Сбор урожая</b>2–11 сентября 2027</div><div><b>Каштаны</b>6–15 октября 2027</div><div><b>Новое оливковое масло</b>10–19 ноября 2027</div></div>
 <h3 style="margin-top:34px;font-size:26px">Цены</h3><div class="tablebox"><table><tbody><tr><td>Основной тур · 10 дней, 9 ночей</td><td class="num">4 900 €</td></tr><tr><td>Продление: Неаполь и Капри на паруснике · +4 ночи</td><td class="num">+ 2 600 €</td></tr><tr><td>Продление: Милан и Венеция · +4 ночи</td><td class="num">+ 2 900 €</td></tr><tr><td>Доплата за одноместный номер</td><td class="num">+ 690 €</td></tr></tbody></table></div>
 <p class="note">Цены за человека при двухместном размещении. Одноместное: +690 € к туру, +390 € к Милану и Венеции. На яхте только двухместные каюты.</p><p class="note">Выезд гарантирован от 6 человек. Если группа не набирается, аванс возвращается полностью.</p>
