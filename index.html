@@ -305,7 +305,7 @@ function apriVideo(u){
   <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6) 0%,rgba(0,0,0,.1) 55%,transparent 100%);"></div>
   <div style="position:relative;z-index:2;width:100%;max-width:1100px;margin:0 auto;padding:0 20px 34px;text-align:left;">
     <!-- l'indicatore Aperto/Chiuso sta sopra i pulsanti Prenota e Chiama -->
-    <script>document.addEventListener('DOMContentLoaded',function(){var S=[{"da":"12:00","a":"14:30","chiusi":[0]},{"da":"19:00","a":"22:30","chiusi":[]}];var el=document.getElementById('rf-aperto');if(!S.length||!el)return;
+    <script>document.addEventListener('DOMContentLoaded',function(){var S=[{"da":"12:00","a":"14:30","chiusi":[0]},{"da":"19:00","a":"22:00","chiusi":[]}];var el=document.getElementById('rf-aperto');if(!S.length||!el)return;
 var n=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Rome'}));var g=n.getDay(),m=n.getHours()*60+n.getMinutes();
 function mm(h){var p=h.split(':');return (+p[0])*60+(+p[1]);}
 function aperta(s,d){return s.chiusi.indexOf(d)<0;}
