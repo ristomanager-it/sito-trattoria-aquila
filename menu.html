@@ -592,4 +592,5 @@ var h='<div class="mcat">'+d.cats.map(function(c,i){return'<button class="mcat-b
 d.cats.map(function(c,i){return'<div class="menu-cat" data-cat="'+e(c.id)+'" style="'+(i?'display:none':'')+'">'+d.voci.filter(function(v){return v.categoria_id===c.id}).map(function(v){
 return'<div class="mi"><div><div class="mi-n">'+e(v.nome)+'</div>'+(v.descrizione?'<div class="mi-d">'+e(v.descrizione)+'</div>':'')+'</div>'+(Number(v.prezzo)?'<div class="mi-p">€ '+Number(v.prezzo).toFixed(2)+'</div>':'')+'</div>'}).join("")+'</div>'}).join("")+'</div>';
 document.querySelectorAll("[data-menu-live]").forEach(function(x){x.innerHTML=h})}).catch(function(){})})();</script>
+<script defer src="https://app.ristoflow-ai.com/js/video-lingue.js?v=1"></script>
 </body></html>
