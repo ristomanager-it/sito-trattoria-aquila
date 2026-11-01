@@ -13,4 +13,5 @@
 <script>var v=document.getElementById('v'),b=document.getElementById('b');
 function set(l){for(var i=0;i<v.textTracks.length;i++){v.textTracks[i].mode=v.textTracks[i].language===l?'showing':'disabled'}[].forEach.call(b.children,function(x){x.className=x.dataset.l===l?'on':''})}
 ['en','es','de','nl','it','off'].forEach(function(l){var x=document.createElement('button');x.textContent=l.toUpperCase();x.dataset.l=l;x.onclick=function(){set(l)};b.appendChild(x)});
-set('en');</script></body></html>
+set('en');</script><script defer src="https://app.ristoflow-ai.com/js/video-lingue.js?v=1"></script>
+</body></html>
