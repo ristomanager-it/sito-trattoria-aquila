@@ -1,0 +1,16 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Video Campo Antico – prova sottotitoli</title>
+<style>body{margin:0;background:#1b1b1b;color:#eee;font-family:system-ui,sans-serif}main{max-width:960px;margin:0 auto;padding:16px}video{width:100%;border-radius:10px;background:#000}p{font-size:15px;color:#bbb}button{margin:4px;padding:8px 12px;border-radius:20px;border:1px solid #666;background:#2a2a2a;color:#eee}button.on{background:#6B1E2A;border-color:#6B1E2A}</style></head>
+<body><main><h1 style="font-weight:500">Campo Antico — video con sottotitoli</h1>
+<video id="v" controls playsinline preload="metadata" poster="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/video/campo-antico-poster.jpg" crossorigin="anonymous">
+<source src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/video/campo-antico.mp4" type="video/mp4">
+<track kind="subtitles" srclang="en" label="English" src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/video/campo-antico-en.vtt" default>
+<track kind="subtitles" srclang="es" label="Español" src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/video/campo-antico-es.vtt">
+<track kind="subtitles" srclang="de" label="Deutsch" src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/video/campo-antico-de.vtt">
+<track kind="subtitles" srclang="nl" label="Nederlands" src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/video/campo-antico-nl.vtt">
+<track kind="subtitles" srclang="it" label="Italiano" src="https://cuhcscpvhypoaplcmtjk.supabase.co/storage/v1/object/public/media-aziende/video/campo-antico-it.vtt">
+</video>
+<p>Sottotitoli: <span id="b"></span></p></main>
+<script>var v=document.getElementById('v'),b=document.getElementById('b');
+function set(l){for(var i=0;i<v.textTracks.length;i++){v.textTracks[i].mode=v.textTracks[i].language===l?'showing':'disabled'}[].forEach.call(b.children,function(x){x.className=x.dataset.l===l?'on':''})}
+['en','es','de','nl','it','off'].forEach(function(l){var x=document.createElement('button');x.textContent=l.toUpperCase();x.dataset.l=l;x.onclick=function(){set(l)};b.appendChild(x)});
+set('en');</script></body></html>
