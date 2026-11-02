@@ -262,18 +262,27 @@ details.more summary::after{content:""}
 var S={"o_wed": "Hochzeitsfeier", "o_din": "Willkommensdinner", "o_bru": "Brunch am Pool", "o_farm": "Exklusive Nutzung des Landguts", "o_shu": "Shuttles zu jedem Fest", "g_night": "Eine Nacht im Hotel Aquila", "g_cook": "Pasta-Kochkurs", "g_rome": "Ein Tag in Rom", "g_civ": "Civita und Weingut Cotarella", "g_tus": "Toskana, zwei Tage", "per_guest": "pro Gast", "total": "Gesamt", "deposit": "30 % Anzahlung sichert das Datum", "guests_lbl": "Gäste", "nights_lbl": "Nächte auf dem Landgut", "f_names": "Eure Namen", "f_email": "E-Mail", "f_country": "Land", "f_when": "Hochzeitsdatum oder Monat", "f_guests": "Anzahl der Gäste", "f_msg": "Sonst noch etwas?"},L="de-DE",WA="393930965070",US=false;
 function $(i){return document.getElementById(i)}
 function m(n){var e=new Intl.NumberFormat(L,{style:"currency",currency:"EUR",maximumFractionDigits:0}).format(n);return US?e+" (≈ "+new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(Math.round(n*1.14/10)*10)+")":e}
-function wed(g){var p=g>=100?168:168+18*Math.ceil((100-g)/10);return Math.max(p*g,10800)}
+var P={rb:168,rs:18,rm:10800,cd:60,br:48,fn:1250,nv:1080,gn:65,gc:95,gr:160,gv:180,gt:650};
+function wed(g){var p=g>=100?P.rb:P.rb+P.rs*Math.ceil((100-g)/10);return Math.max(p*g,P.rm)}
 var rowsTxt="";
 function calc(){var g=+$("g").value;$("gOut").textContent=g;var r=[[S.o_wed,wed(g)]];
-if($("cDin").checked)r.push([S.o_din,60*g]);if($("cBru").checked)r.push([S.o_bru,48*g]);
-if($("cFarm").checked)r.push([S.o_farm+" · "+$("nFarm").value,1250*+$("nFarm").value]);if($("cShu").checked)r.push([S.o_shu,1080]);
-[["xNight","g_night",65],["xCook","g_cook",95],["xRome","g_rome",160],["xCiv","g_civ",180],["xTus","g_tus",650]].forEach(function(x){if($(x[0]).checked)r.push(["🎁 "+S[x[1]],x[2]*g])});
+if($("cDin").checked)r.push([S.o_din,P.cd*g]);if($("cBru").checked)r.push([S.o_bru,P.br*g]);
+if($("cFarm").checked)r.push([S.o_farm+" · "+$("nFarm").value,P.fn*+$("nFarm").value]);if($("cShu").checked)r.push([S.o_shu,P.nv]);
+[["xNight","g_night",P.gn],["xCook","g_cook",P.gc],["xRome","g_rome",P.gr],["xCiv","g_civ",P.gv],["xTus","g_tus",P.gt]].forEach(function(x){if($(x[0]).checked)r.push(["🎁 "+S[x[1]],x[2]*g])});
 var t=0,h="";r.forEach(function(x){t+=x[1];h+='<div class="row"><span>'+x[0]+'</span><span>'+m(x[1])+'</span></div>'});
 $("rows").innerHTML=h;$("tot").textContent=m(t);$("pg").textContent=m(Math.round(t/g))+" "+S.per_guest;$("dep").textContent=S.deposit+": "+m(Math.round(t*.3));
 rowsTxt=S.guests_lbl+": "+g+"\n"+r.map(function(x){return "- "+x[0]+": "+m(x[1])}).join("\n")+"\n"+S.total+": "+m(t);
 $("send").href="https://wa.me/"+WA+"?text="+encodeURIComponent(rowsTxt)}
 $("calc").classList.remove("nojs-hide");
 document.querySelectorAll("#calc input,#calc select").forEach(function(el){el.addEventListener("input",calc);el.addEventListener("change",calc)});calc();
+/* prezzi aggiornati da Ristoflow: se la lettura riesce, calcolatore ed etichette usano quelli */
+(function(){var M={ricevimento_base:"rb",ricevimento_scatto:"rs",ricevimento_minimo:"rm",cena_benvenuto:"cd",brunch:"br",fattoria_notte:"fn",navette:"nv",regalo_notte_aquila:"gn",regalo_pasta:"gc",regalo_roma:"gr",regalo_civita:"gv",regalo_toscana:"gt"};
+fetch("https://cuhcscpvhypoaplcmtjk.supabase.co/rest/v1/wedding_prezzi_estero?azienda_id=eq.b331365f-17db-4dda-aa2f-77a09427fe42&select=chiave,valore",{headers:{apikey:"sb_publishable_WotaBvSScN1GwFw_rVWbzA_2OEcRJy-"}}).then(function(r){return r.ok?r.json():[]}).then(function(d){if(!d||!d.length)return;
+d.forEach(function(x){if(M[x.chiave])P[M[x.chiave]]=+x.valore});
+function lb(id,v,pg){var i=$(id);if(!i)return;var s=i.closest("label").querySelectorAll("span");s[s.length-1].textContent=m(v)+(pg?" "+S.per_guest:"")}
+lb("cDin",P.cd,1);lb("cBru",P.br,1);lb("cShu",P.nv,0);lb("xNight",P.gn,1);lb("xCook",P.gc,1);lb("xRome",P.gr,1);lb("xCiv",P.gv,1);lb("xTus",P.gt,1);
+var f=$("cFarm");if(f){var s=f.closest("label").querySelectorAll("span");s[s.length-1].textContent=m(P.fn)}
+calc()}).catch(function(){})})();
 $("req").addEventListener("submit",function(ev){ev.preventDefault();var t=[[S.f_names,$("fN").value],[S.f_email,$("fE").value],[S.f_country,$("fC").value],[S.f_when,$("fW").value],[S.f_guests,$("fG").value]].map(function(x){return x[0]+": "+x[1]}).join("\n")+"\n\n"+rowsTxt+"\n\n"+$("fM").value;
 window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(t),"_blank")});
 })();
