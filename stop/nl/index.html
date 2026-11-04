@@ -101,8 +101,8 @@ fetch(U+"prenotazioni_tavoli",{method:"POST",headers:{"Content-Type":"applicatio
 body:JSON.stringify({azienda_id:"b331365f-17db-4dda-aa2f-77a09427fe42",sede_id:"4a936e52-a1e3-42fc-843c-e8d15dc86040",cliente_nome:v("nome")+" "+v("cognome"),cognome:v("cognome"),
 cliente_telefono:v("pref")+tel,data:v("giorno"),ora:v("ora"),coperti:Number(v("pers")),stato:"in_attesa",canale:"online",source:UTM.utm_source||"stop",lingua:L,tag:"stop-viaggiatori",
 note:"Viaggiatore straniero (pagina /stop/"+L+")",riferimento:JSON.stringify({landing:"stop-"+L,utm_source:UTM.utm_source||null,utm_medium:UTM.utm_medium||null,utm_campaign:UTM.utm_campaign||null,utm_content:UTM.utm_content||null,sid:ses})})})
-.then(function(r){if(!r.ok)throw 0;mod.innerHTML="<h3 style='margin:0;color:var(--verde)'>✓ "+T.ok+"</h3>";inv("submit","prenotazione_completata",v("pers"));
-if(window.fbq)fbq("track","Lead",{content_name:"stop-"+L});if(window.gtag){gtag("event","conversion",{send_to:"AW-16882695231/oPygCITPuaodEL_4pfI-"});gtag("event","generate_lead");}})
+.then(function(r){if(!r.ok)throw 0;var P=v("pers"),G="grazie/?n="+encodeURIComponent(v("nome"))+"&d="+encodeURIComponent(v("giorno"))+"&o="+encodeURIComponent(v("ora"))+"&p="+encodeURIComponent(P);mod.innerHTML="<h3 style='margin:0;color:var(--verde)'>✓ "+T.ok+"</h3>";inv("submit","prenotazione_completata",P);
+if(window.fbq)fbq("track","Lead",{content_name:"stop-"+L});if(window.gtag){gtag("event","conversion",{send_to:"AW-16882695231/oPygCITPuaodEL_4pfI-"});gtag("event","generate_lead");}setTimeout(function(){location.href=G;},900);})
 .catch(function(){b.disabled=false;m.style.color="#b91c1c";m.textContent=T.err;});});
 })();
 </script></body></html>
