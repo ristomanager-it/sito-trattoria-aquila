@@ -105,4 +105,31 @@ note:"Viaggiatore straniero (pagina /stop/"+L+")",riferimento:JSON.stringify({la
 if(window.fbq)fbq("track","Lead",{content_name:"stop-"+L});if(window.gtag){gtag("event","conversion",{send_to:"AW-16882695231/oPygCITPuaodEL_4pfI-"});gtag("event","generate_lead");}setTimeout(function(){location.href=G;},900);})
 .catch(function(){b.disabled=false;m.style.color="#b91c1c";m.textContent=T.err;});});
 })();
+<script>
+/* rf-arrivo v1: come e' arrivato il visitatore (annuncio, condivisione, WhatsApp, app) -> statistiche Ristoflow + Clarity */
+(function(){try{
+if(sessionStorage.getItem('rf_arrivo'))return;
+var p=new URLSearchParams(location.search),ua=navigator.userAgent||'',r=document.referrer||'',src=(p.get('utm_source')||'').toLowerCase();
+var app=/Instagram/.test(ua)?'instagram':/FB_IAB\/MESSENGER|Messenger/.test(ua)?'messenger':/FBAN|FBAV|FB_IAB|FB4A/.test(ua)?'facebook':/WhatsApp/i.test(ua)||/com\.whatsapp/.test(r)?'whatsapp':/Line\//.test(ua)?'line':/Telegram/i.test(ua)||/telegram/.test(r)?'telegram':'browser';
+var da=r?r.replace(/^https?:\/\//,'').split('/')[0]:'';
+var arr;
+if(/%7B%7B|\{\{/.test(location.search)||p.get('utm_content')==='condiviso')arr='condivisione';
+else if((src==='meta'||src==='facebook'||src==='instagram')&&!p.get('fbclid'))arr='condivisione';
+else if((src==='meta'||src==='facebook'||src==='instagram')&&(app==='whatsapp'||app==='messenger'||app==='telegram'))arr='condivisione';
+else if(src==='meta'||src==='facebook'||src==='instagram'||p.get('fbclid'))arr='annuncio_meta';
+else if(p.get('gclid')||p.get('gbraid')||p.get('wbraid')||src==='google')arr='annuncio_google';
+else if(app==='whatsapp'||app==='telegram')arr='messaggio';
+else if(/google\./.test(da))arr='ricerca_google';
+else if(/facebook\.com|instagram\.com/.test(da)||app==='facebook'||app==='instagram')arr='social';
+else if(da&&da!==location.hostname)arr='altro_sito';
+else arr='diretto_o_messaggio';
+sessionStorage.setItem('rf_arrivo',arr);
+var esc=false;try{esc=localStorage.getItem('rf_escludi')==='1';}catch(e){}
+if(!esc)fetch('https://cuhcscpvhypoaplcmtjk.supabase.co/functions/v1/track',{method:'POST',headers:{'Content-Type':'application/json'},keepalive:true,
+body:JSON.stringify({azienda_id:'b331365f-17db-4dda-aa2f-77a09427fe42',pagina:location.hostname+location.pathname,tipo:'arrivo',elemento:arr,valore:da||null,browser:app,
+referrer:r||null,utm_source:p.get('utm_source'),utm_medium:p.get('utm_medium'),utm_campaign:p.get('utm_campaign'),device:/Mobi/.test(ua)?'mobile':'desktop',
+session_id:(function(){try{return sessionStorage.getItem('rf_sid')}catch(e){return null}})()})}).catch(function(){});
+var n=0,iv=setInterval(function(){n++;if(window.clarity){try{clarity('set','arrivo',arr);clarity('set','app',app);if(da)clarity('set','da',da);}catch(e){}clearInterval(iv);}else if(n>60)clearInterval(iv);},2000);
+}catch(e){}})();
+</script>
 </script></body></html>
