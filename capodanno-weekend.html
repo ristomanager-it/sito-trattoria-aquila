@@ -446,6 +446,7 @@ footer a{color:var(--oro)}
   }
   function aggiorna(){
     sincronizza();
+    quantiPranzo();
     $("riga-navetta").hidden = !festaCampo();
     var avv = $("avviso-camere"), serve = camereNecessarie();
     if (camere < serve) {
