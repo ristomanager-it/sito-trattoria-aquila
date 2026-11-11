@@ -481,6 +481,8 @@ footer a{color:var(--oro)}
   };
   Array.prototype.forEach.call(document.querySelectorAll("input[name=notti]"), function(r){ r.onchange = aggiorna; });
   $("pranzo").onchange = aggiorna;
+  $("pranzo-adulti").onchange = function(){ pranzoScelto.a = Number(this.value); aggiorna(); };
+  $("pranzo-bimbi").onchange = function(){ pranzoScelto.b = Number(this.value); aggiorna(); };
   $("navetta").onchange = aggiorna;
 
   function disegnaPrezzi(){
