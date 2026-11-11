@@ -416,6 +416,23 @@ footer a{color:var(--oro)}
   function camereNecessarie(){ return stanze.some(function(x){ return lettoStanza(x) > maxLetto(); }) || esauriteAq().length ? camere + 1 : camere; }
   function camera(n){ if (!cfg) return 0; var base = Number(cfg.prezzo_notte) * n; var sc = n === 2 ? Number(cfg.sconto_2_notti) : n === 3 ? Number(cfg.sconto_3_notti) : 0; return Math.round(base * (100 - sc)) / 100; }
   function pranzoAttivo(){ return cfg && cfg.pranzo_attivo && cfg.pranzo_prezzo; }
+  // quanti restano a pranzo il 1° gennaio: si chiede solo se il pranzo e' spuntato; di partenza tutti
+  var pranzoScelto = { a: null, b: null };
+  function opzioni(max, val, minimo){ var o = ""; for (var i = minimo; i <= max; i++) o += '<option value="' + i + '"' + (i === val ? " selected" : "") + ">" + i + "</option>"; return o; }
+  function quantiPranzo(){
+    var on = !!(pranzoAttivo() && $("pranzo").checked);
+    $("quanti-pranzo").hidden = !on;
+    if (!on) return;
+    var a = pranzoScelto.a == null ? adulti : Math.min(pranzoScelto.a, adulti);
+    var b = pranzoScelto.b == null ? grandi() : Math.min(pranzoScelto.b, grandi());
+    $("pranzo-adulti").innerHTML = opzioni(adulti, a, adulti ? 1 : 0);
+    $("pranzo-bimbi").innerHTML = opzioni(grandi(), b, 0);
+    $("riga-pranzo-bimbi").hidden = !grandi();
+  }
+  function pranzoAdulti(){ return pranzoAttivo() && $("pranzo").checked ? Number($("pranzo-adulti").value || adulti) : 0; }
+  function pranzoBimbi(){ return pranzoAttivo() && $("pranzo").checked && grandi() ? Number($("pranzo-bimbi").value || 0) : 0; }
+  // al pranzo contano anche i bimbi sotto i 4 anni (gratis) se i genitori restano
+  function pranzoPersone(){ var a = pranzoAdulti(); return a ? a + pranzoBimbi() + piccoli() : 0; }
   function conti(){
     sincronizza();
     var c = adulti * prezzoCena() + grandi() * 40;
