@@ -320,9 +320,11 @@ if(txt){el.textContent=(ok?'🟢 ':'🔴 ')+txt;el.style.display='inline-block';
     
     <div style="display:flex;flex-direction:column;align-items:center;gap:8px;width:min(100%,430px);margin:0 auto;">
       <div id="rf-aperto" style="display:none;background:rgba(255,255,255,.96);color:#1f2937;font-size:14px;font-weight:700;padding:7px 14px;border-radius:999px;text-align:center;"></div>
-      <div style="display:flex;gap:10px;width:100%;">
-        <!-- Prenota: sta nella barra sotto la foto -->
-        
+      <div style="display:flex;flex-direction:column;gap:10px;width:100%;">
+        <a href="https://app.ristoflow-ai.com/#/booking/social" style="text-align:center;background:var(--btn);color:#fff;font-weight:800;font-size:15px;padding:13px 10px;border-radius:8px;white-space:nowrap;">🗓 Prenota</a>
+        <a id="rf-capodanno" href="/capodanno-aquila.html?utm_source=sito&amp;utm_campaign=capodanno-pulsante" style="text-align:center;background:linear-gradient(135deg,#d4af5a,#f4d77a);color:#1a1209;font-weight:800;font-size:15px;padding:13px 10px;border-radius:8px;box-shadow:0 3px 14px rgba(212,175,90,.5);white-space:nowrap;">🥂 Speciale Capodanno</a>
+        <!-- Capodanno: il pulsante sparisce da solo il 31/12/2026 alle 12:00 (ora italiana) -->
+        <script>(function(){var c=document.getElementById('rf-capodanno');if(c&&Date.now()>=Date.parse('2026-12-31T12:00:00+01:00'))c.parentNode.removeChild(c);})();</script>
       </div>
       
     </div>
