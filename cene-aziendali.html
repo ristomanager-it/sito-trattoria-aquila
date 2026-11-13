@@ -264,5 +264,23 @@ for(var i=0;i<60;i++)f.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()
 (function(){ if (!("IntersectionObserver" in window)) return; var visti = {};
   var oss = new IntersectionObserver(function(v){ v.forEach(function(x){ var n = x.target.getAttribute("data-traccia"); if (x.isIntersecting && !visti[n]) { visti[n] = true; if (window.rfEvento) rfEvento(n, {}); } }); }, { threshold: .4 });
   Array.prototype.forEach.call(document.querySelectorAll("[data-traccia]"), function(el){ oss.observe(el); }); })();</script>
+<script>
+/* contatore visite Ristoflow (page_analytics) - REGOLA: nessuna landing senza contatore. Nessun dato personale. */
+(function(){try{
+var A="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN1aGNzY3B2aHlwb2FwbGNtdGprIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM4MjY4MjgsImV4cCI6MjA3OTQwMjgyOH0.q9zAs0oh8F1-whtORHBIORF5jIn1NTS3LvSMWleP0a0",U="https://cuhcscpvhypoaplcmtjk.supabase.co/rest/v1/page_analytics";
+var vis=null;try{vis=localStorage.getItem("rf_vis");var vt=Number(localStorage.getItem("rf_vis_t")||0);if(!vis||Date.now()-vt>5184000000){vis=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem("rf_vis",vis);localStorage.setItem("rf_vis_t",String(Date.now()));}}catch(e){}
+var ses=null;try{ses=sessionStorage.getItem("rf_ses");if(!ses){ses=Math.random().toString(36).slice(2)+Date.now().toString(36);sessionStorage.setItem("rf_ses",ses);}}catch(e){}
+var q=new URLSearchParams(location.search),ref=document.referrer||"";
+var src=q.get("utm_source")||(ref?(function(){try{return new URL(ref).hostname;}catch(e){return null;}})():"diretto");
+function inv(tipo,el,val,ok){try{fetch(U,{method:"POST",keepalive:true,headers:{"Content-Type":"application/json","apikey":A,"Authorization":"Bearer "+A,"Prefer":"return=minimal"},body:JSON.stringify({azienda_id:"b331365f-17db-4dda-aa2f-77a09427fe42",sede_id:"4a936e52-a1e3-42fc-843c-e8d15dc86040",pagina:"cene-aziendali-aquila",pagina_id:"b331365f-17db-4dda-aa2f-77a09427fe42",tipo:tipo,elemento:el,valore:val||null,completato:!!ok,referrer:ref?ref.slice(0,250):null,utm_source:src,utm_medium:q.get("utm_medium"),utm_campaign:q.get("utm_campaign"),device:/Mobi|Android/i.test(navigator.userAgent)?"mobile":"desktop",session_id:ses,visitatore:vis})}).catch(function(){});}catch(e){}}
+inv("view","sito_pagina");
+var sg={};addEventListener("scroll",function(){var h=document.documentElement,t=h.scrollHeight-h.clientHeight;if(t<=0)return;var p=Math.round(100*h.scrollTop/t);[25,50,75,100].forEach(function(s){if(p>=s&&!sg[s]){sg[s]=1;inv("click","scroll_"+s);}});},{passive:true});
+var t0=Date.now(),fatto=false;function tempo(){if(fatto)return;var s=Math.round((Date.now()-t0)/1000);if(s<2)return;fatto=true;inv("click","tempo_pagina",String(s));}
+document.addEventListener("visibilitychange",function(){if(document.visibilityState==="hidden")tempo();});addEventListener("pagehide",tempo);
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a,button");if(!a)return;var h=a.getAttribute("href")||"";if(h.indexOf("tel:")===0)inv("click","click_telefono",h);else if(h.indexOf("wa.me")>=0)inv("click","wame","whatsapp");else if(/maps/.test(h))inv("click","click_mappa");},true);
+var mod=document.getElementById("modulo");if(mod){var f1=function(){mod.removeEventListener("focusin",f1);inv("step","modulo_iniziato");};mod.addEventListener("focusin",f1);}
+var gr=document.getElementById("grazie"),inviata=false;if(gr&&window.MutationObserver){new MutationObserver(function(){if(!inviata&&!gr.hidden){inviata=true;var p=document.getElementById("persone");inv("submit","richiesta_cena_aziendale",p&&p.value?p.value+" persone":null,true);}}).observe(gr,{attributes:true,attributeFilter:["hidden"]});}
+}catch(e){}})();
+</script>
 </body>
 </html>
